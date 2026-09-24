@@ -59,6 +59,43 @@ export function Header() {
             </Link>
           ))}
         </nav>
+
+        {/* Right: Mobile Menu */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" className="text-foreground">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-72 bg-background border-border">
+            <div className="flex flex-col gap-6 mt-8">
+              <div className="font-mono text-sm text-primary mb-4">
+                {"// Navigation"}
+              </div>
+              {navItems.map((item, i) => (
+                <SheetClose asChild key={item.href}>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "font-mono text-lg transition-colors hover:text-primary py-2",
+                      location.pathname === item.href
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <span className="text-primary mr-2">
+                      {String(i + 1).padStart(2, "0")}.
+                    </span>
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   );
 }
