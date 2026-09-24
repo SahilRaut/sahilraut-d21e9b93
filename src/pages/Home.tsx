@@ -128,7 +128,7 @@ export default function Home() {
         <Section index="04" title="Skills">
           <div className="flex flex-wrap gap-2">
             {skills.map((s) => (
-              <span key={s} className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
+              <span key={s} className="rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs text-foreground/90 backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-card/80 hover:text-foreground">
                 {s}
               </span>
             ))}
