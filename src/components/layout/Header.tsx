@@ -22,8 +22,26 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+      {/* Faint scanline texture inside the bar */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(to bottom, hsl(var(--primary)) 0px, hsl(var(--primary)) 1px, transparent 1px, transparent 3px)",
+        }}
+      />
+      {/* Glowing gradient bottom accent */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/70 to-transparent shadow-[0_0_14px_hsl(var(--primary)/0.55)]"
+      />
+      {/* Cyan corner ticks */}
+      <div aria-hidden className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-10 bg-[hsl(210_100%_60%)] shadow-[0_0_8px_hsl(210_100%_60%/0.8)]" />
+      <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 h-[2px] w-10 bg-[hsl(210_100%_60%)] shadow-[0_0_8px_hsl(210_100%_60%/0.8)]" />
       <div className="container relative flex h-16 items-center justify-between">
+
         {/* Left: Logo */}
         <Link
           to="/"
