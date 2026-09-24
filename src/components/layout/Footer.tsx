@@ -19,16 +19,6 @@ export function Footer() {
             <span className="text-primary">//</span> © {currentYear} Sahil Raut
           </p>
 
-          {/* Footer Links */}
-          <div className="flex items-center gap-6">
-            <Link
-              to="/styleguide"
-              className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              Styleguide
-            </Link>
-          </div>
-
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
