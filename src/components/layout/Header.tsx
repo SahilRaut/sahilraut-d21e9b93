@@ -48,7 +48,7 @@ export function Header() {
           aria-label="Sahil Raut — home"
           className="group flex items-center gap-3 transition-opacity hover:opacity-90"
         >
-          <span className="flex h-14 w-14 items-center justify-center">
+          <span className="flex h-9 w-9 items-center justify-center">
             <img
               src={sahilLogo}
               alt=""

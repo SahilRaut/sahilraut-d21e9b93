@@ -55,7 +55,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <a href="#top" aria-label="Sahil Raut — home" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center">
               <img
                 src={sahilLogo}
                 alt=""
