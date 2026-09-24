@@ -64,24 +64,21 @@ export default function Home() {
             <span className="flex h-10 w-10 shrink-0 items-center justify-center">
               <img src={sahilLogo} alt="" className="h-full w-full object-contain" />
             </span>
-            <span className="font-display text-lg uppercase leading-none tracking-tighter text-foreground md:text-xl">
-              Sahil Raut
-            </span>
           </a>
-          <nav className="flex items-center gap-6">
+          <nav className="flex items-center gap-8">
             <Link
               to="/work"
-              className="group font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="group font-mono text-sm font-semibold uppercase tracking-wide text-muted-foreground transition-colors hover:text-primary"
             >
-              <span className="mr-1.5 text-primary/70 transition-colors group-hover:text-primary">01.</span>
               Projects
+              <span className="mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
             </Link>
             <a
               href="#contact"
-              className="group font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="group font-mono text-sm font-semibold uppercase tracking-wide text-muted-foreground transition-colors hover:text-primary"
             >
-              <span className="mr-1.5 text-primary/70 transition-colors group-hover:text-primary">02.</span>
               Contact me
+              <span className="mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
             </a>
           </nav>
         </div>
