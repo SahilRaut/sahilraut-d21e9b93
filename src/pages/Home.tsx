@@ -142,17 +142,6 @@ export default function Home() {
           </div>
         </Section>
 
-        <div id="contact">
-          <Section index="06" title="Contact">
-            {contact.map((c) => (
-              <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" className="group block">
-                <p className="text-xs text-muted-foreground">{c.label}</p>
-                <p className="mt-1 text-lg font-semibold transition-colors group-hover:text-primary">{c.value}</p>
-              </a>
-            ))}
-          </Section>
-        </div>
-
         <section className="border-t border-border py-24">
           <h2 className="retro-text font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
             Thanks
