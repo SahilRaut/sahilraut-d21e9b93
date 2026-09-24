@@ -22,7 +22,7 @@ export default function ProjectDetail() {
               <Button asChild>
                 <Link to="/work">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Work
+                  Back to Projects
                 </Link>
               </Button>
             </div>
@@ -42,7 +42,7 @@ export default function ProjectDetail() {
             className="inline-flex items-center font-mono text-sm text-muted-foreground hover:text-primary transition-colors mb-8 opacity-0 animate-fade-in-up"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Work
+            Back to Projects
           </Link>
 
           {/* Project Header */}
