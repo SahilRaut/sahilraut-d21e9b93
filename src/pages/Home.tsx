@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container">
+      <main className="container relative z-10">
         <Section index="01" title="About">
           <p className="text-lg leading-relaxed text-muted-foreground">
             I'm an AI robotics software developer at <span className="text-foreground">NEURA Robotics</span>, bridging deep learning research and physical hardware so robots can learn and adapt to novel tasks end to end. BEng (Hons) Robotics, UWE Bristol. Outside work: Formula 1, football, chess and cinematography.
@@ -166,7 +166,7 @@ export default function Home() {
           </a>
         </section>
 
-        <footer className="pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
+        <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
       </main>
     </div>
   );
