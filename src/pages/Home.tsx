@@ -6,6 +6,9 @@ import { CodeDivider } from "@/components/ui/CodeDivider";
 import { CodeLabel } from "@/components/ui/CodeLabel";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { TypingCursor } from "@/components/ui/TypingCursor";
+import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
+import { BinaryRain } from "@/components/lab/BinaryRain";
+import { RoboticsLab } from "@/components/lab/RoboticsLab";
 import { ArrowRight } from "lucide-react";
 
 
@@ -13,17 +16,26 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-grid">
-        <div className="container">
+      <section className="relative min-h-[80vh] flex items-center bg-grid overflow-hidden">
+        <BinaryRain className="pointer-events-none absolute inset-0 opacity-40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+        <div className="container relative">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
             {/* Code-style label */}
             <CodeLabel className="mb-6">AI Robotics Software Developer</CodeLabel>
 
             {/* Headline with typing cursor */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Hi, I'm Sahil Raut.
+              <BinaryGlitchText text="Hi, I'm Sahil Raut." speed={30} hold={2} />
               <br />
-              <span className="text-muted-foreground">I build the intelligence behind robots</span>
+              <BinaryGlitchText
+                text="I build the intelligence behind robots"
+                className="text-muted-foreground"
+                speed={26}
+                hold={1}
+                delay={700}
+                loop={14000}
+              />
               <TypingCursor />
             </h1>
 
@@ -44,6 +56,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Live robotics lab */}
+      <section className="py-20">
+        <div className="container">
+          <div className="opacity-0 animate-fade-in-up">
+            <CodeDivider label="Robotics Lab / Live" />
+          </div>
+          <p className="mb-8 max-w-xl text-muted-foreground">
+            A running pick-and-place cell: the arm perceives the cubes, plans a
+            trajectory and sorts them into the correct bins. Pick a mission, change
+            the speed, or drag to look around.
+          </p>
+          <div className="opacity-0 animate-fade-in-up stagger-1">
+            <RoboticsLab />
+          </div>
+        </div>
+      </section>
+
 
       {/* Featured Projects */}
       <section className="py-20">
