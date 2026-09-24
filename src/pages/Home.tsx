@@ -63,12 +63,8 @@ export default function Home() {
             <img src={sahilLogo} alt="Sahil Raut" className="h-full w-full object-contain" />
           </a>
           <nav className="flex items-center gap-6">
-            <Link to="/work" className="hover:text-primary transition-colors">Work</Link>
+            <Link to="/work" className="hover:text-primary transition-colors">Projects</Link>
             <a href="#contact" className="hover:text-primary transition-colors">Contact me</a>
-            <span className="flex items-center gap-1.5 text-primary">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
-              Available for work
-            </span>
           </nav>
         </div>
       </header>
