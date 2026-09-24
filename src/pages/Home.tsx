@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { NeuralField } from "@/components/lab/NeuralField";
-import sahilLogo from "@/assets/sahil-logo-white.png";
+import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const experience = [
   {
