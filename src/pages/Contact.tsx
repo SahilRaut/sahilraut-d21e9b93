@@ -100,15 +100,11 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="font-mono">
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
+                <Button type="submit" className="font-mono">
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4" />
+                  </>
                 </Button>
               </form>
             </div>
