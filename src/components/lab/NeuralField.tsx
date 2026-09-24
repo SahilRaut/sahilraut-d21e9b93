@@ -149,7 +149,7 @@ export function NeuralField({ className }: { className?: string }) {
       for (const e of edges) {
         const a = nodes[e.a];
         const b = nodes[e.b];
-        ctx.strokeStyle = `hsl(${accent} / ${0.035 + e.wgt * 0.09})`;
+        ctx.strokeStyle = `hsl(${accent} / ${0.07 + e.wgt * 0.16})`;
         ctx.lineWidth = 0.6 + e.wgt * 0.5;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
@@ -190,7 +190,7 @@ export function NeuralField({ className }: { className?: string }) {
 
       // nodes
       for (const n of nodes) {
-        const act = 0.28 + (Math.sin(t * 2 + n.phase) * 0.5 + 0.5) * 0.45;
+        const act = 0.45 + (Math.sin(t * 2 + n.phase) * 0.5 + 0.5) * 0.5;
         ctx.fillStyle = `hsl(${accent} / ${act})`;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
