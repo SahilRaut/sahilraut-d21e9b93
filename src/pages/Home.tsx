@@ -4,6 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { NeuralField } from "@/components/lab/NeuralField";
+import logoAsset from "@/assets/sahil-logo.png.asset.json";
+import robotAsset from "@/assets/robot-manipulation.jpg.asset.json";
 
 const experience = [
   {
@@ -58,32 +60,38 @@ export default function Home() {
       {/* Top bar */}
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between text-xs font-medium">
-          <div className="flex items-center gap-3">
-            <span>Sahil Raut</span>
+          <a href="#top" aria-label="Sahil Raut — home" className="flex h-10 w-16 items-center">
+            <img src={logoAsset.url} alt="Sahil Raut" className="h-full w-full object-contain object-left" />
+          </a>
+          <nav className="flex items-center gap-6">
+            <Link to="/work" className="hover:text-primary transition-colors">Work</Link>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact me</a>
             <span className="flex items-center gap-1.5 text-primary">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
               Available for work
             </span>
-          </div>
-          <nav className="flex items-center gap-6">
-            <Link to="/work" className="hover:text-primary transition-colors">Work</Link>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact me</a>
-            <span className="hidden text-muted-foreground sm:inline">(UTC+1)</span>
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-screen items-end overflow-hidden pb-16 pt-24">
-        <NeuralField className="pointer-events-none absolute inset-0 opacity-60" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+      <section id="top" className="relative flex min-h-screen items-end overflow-hidden pb-16 pt-24">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <img
+            src={robotAsset.url}
+            alt=""
+            className="absolute right-0 top-0 h-[72%] w-full object-cover object-center opacity-45 grayscale-[30%] md:h-full md:w-[68%] md:object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/35 to-background/35" />
+        </div>
+        <NeuralField className="pointer-events-none absolute inset-0 opacity-45 mix-blend-screen" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
         <div className="container relative">
           <p className="mb-16 ml-auto max-w-xs text-right text-xs font-semibold uppercase leading-relaxed tracking-wide md:mb-32">
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
           <p className="font-display text-lg leading-tight text-primary md:text-2xl">
-            2022→2026
-            <br />
             AI × Robotics
           </p>
           <h1 className="font-display text-[15vw] uppercase leading-[0.85] tracking-tighter md:text-[9vw]">
