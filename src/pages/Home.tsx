@@ -59,13 +59,30 @@ export default function Home() {
       <BinaryField />
       {/* Top bar */}
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between text-xs font-medium">
-          <a href="#top" aria-label="Sahil Raut — home" className="flex h-12 w-12 shrink-0 items-center">
-            <img src={sahilLogo} alt="Sahil Raut" className="h-full w-full object-contain" />
+        <div className="container flex h-16 items-center justify-between">
+          <a href="#top" aria-label="Sahil Raut — home" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center">
+              <img src={sahilLogo} alt="" className="h-full w-full object-contain" />
+            </span>
+            <span className="font-display text-lg uppercase leading-none tracking-tighter text-foreground md:text-xl">
+              Sahil Raut
+            </span>
           </a>
           <nav className="flex items-center gap-6">
-            <Link to="/work" className="hover:text-primary transition-colors">Projects</Link>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact me</a>
+            <Link
+              to="/work"
+              className="group font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              <span className="mr-1.5 text-primary/70 transition-colors group-hover:text-primary">01.</span>
+              Projects
+            </Link>
+            <a
+              href="#contact"
+              className="group font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              <span className="mr-1.5 text-primary/70 transition-colors group-hover:text-primary">02.</span>
+              Contact me
+            </a>
           </nav>
         </div>
       </header>
