@@ -21,7 +21,6 @@ export function RedGrid({ className = "" }: { className?: string }) {
       canvas.width = w * dpr; canvas.height = h * dpr;
       canvas.style.width = w + "px"; canvas.style.height = h + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-ec: 0
     };
 
     const draw = (t: number) => {
