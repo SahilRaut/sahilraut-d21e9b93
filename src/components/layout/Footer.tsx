@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
