@@ -12,19 +12,19 @@
 @layer base {
   :root {
     /* Dark theme as default - deep black/graphite */
-    --background: 0 0% 4%;
+    --background: 240 6% 4%;
     --foreground: 0 0% 98%;
 
     /* Card backgrounds - slightly lighter graphite */
-    --card: 0 0% 7%;
+    --card: 240 5% 7%;
     --card-foreground: 0 0% 98%;
 
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
 
     /* Primary - Neon Green accent */
-    --primary: 130 100% 50%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 354 88% 55%;
+    --primary-foreground: 0 0% 100%;
 
     /* Secondary - Dark graphite */
     --secondary: 0 0% 12%;
@@ -35,8 +35,8 @@
     --muted-foreground: 0 0% 60%;
 
     /* Accent - Same as primary for consistency */
-    --accent: 130 100% 50%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 354 88% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -44,50 +44,50 @@
     /* Borders - Subtle dark lines */
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 130 100% 50%;
+    --ring: 354 88% 55%;
 
     --radius: 0.375rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 130 100% 50%;
-    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-primary: 354 88% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 130 100% 50%;
+    --sidebar-ring: 354 88% 55%;
   }
 
   .dark {
     /* Same as root - dark theme is the default */
-    --background: 0 0% 4%;
+    --background: 240 6% 4%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 7%;
+    --card: 240 5% 7%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
-    --primary: 130 100% 50%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 354 88% 55%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
-    --accent: 130 100% 50%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 354 88% 55%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 130 100% 50%;
+    --ring: 354 88% 55%;
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 130 100% 50%;
-    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-primary: 354 88% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 130 100% 50%;
+    --sidebar-ring: 354 88% 55%;
   }
 }
 
@@ -137,7 +137,7 @@
 
   /* Subtle glow effect for accent elements */
   .glow-primary {
-    box-shadow: 0 0 20px hsl(130 100% 50% / 0.3);
+    box-shadow: 0 0 24px hsl(var(--primary) / 0.35);
   }
 
   /* Code-style text */
@@ -148,8 +148,8 @@
   /* Technical grid pattern background */
   .bg-grid {
     background-image: 
-      linear-gradient(hsl(0 0% 18% / 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 18% / 0.5) 1px, transparent 1px);
+      linear-gradient(hsl(var(--primary) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.07) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
@@ -160,7 +160,7 @@
 
   .hover-lift:hover {
     @apply -translate-y-1;
-    box-shadow: 0 10px 40px hsl(130 100% 50% / 0.1);
+    box-shadow: 0 10px 40px hsl(var(--primary) / 0.14);
   }
 
   /* Animated underline for links */
@@ -182,4 +182,34 @@
   .stagger-2 { animation-delay: 0.2s; }
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
+}
+
+@layer utilities {
+  /* Binary data-rain glitch backdrop */
+  @keyframes binary-scroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 600px; }
+  }
+
+  .bg-binary {
+    background-image: repeating-linear-gradient(
+      0deg,
+      hsl(var(--primary) / 0.05) 0px,
+      hsl(var(--primary) / 0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+    animation: binary-scroll 12s linear infinite;
+  }
+
+  @keyframes glitch-shift {
+    0%, 92%, 100% { transform: translate(0, 0); }
+    93% { transform: translate(-2px, 1px); }
+    95% { transform: translate(2px, -1px); }
+    97% { transform: translate(-1px, 0); }
+  }
+
+  .glitch-shift {
+    animation: glitch-shift 6s infinite steps(1, end);
+  }
 }
