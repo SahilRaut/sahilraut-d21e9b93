@@ -172,9 +172,9 @@ export default function Home() {
             here
           </h2>
           <a href="#contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
-            Let's build
+            Solving robotics,
             <br />
-            robots that learn
+            one inference layer at a time
           </a>
         </section>
 
