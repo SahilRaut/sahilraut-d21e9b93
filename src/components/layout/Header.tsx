@@ -48,7 +48,7 @@ export function Header() {
                   : "text-muted-foreground hover:text-primary"
               )}
             >
-              {item.label}
+              <span className="retro-text">{item.label}</span>
               <span
                 className={cn(
                   "mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left",
