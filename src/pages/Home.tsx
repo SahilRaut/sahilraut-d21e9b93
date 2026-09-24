@@ -164,7 +164,7 @@ export default function Home() {
         </div>
 
         <section className="border-t border-border py-24">
-          <h2 className="font-display text-[13vw] uppercase leading-[0.85] tracking-tighter text-muted-foreground md:text-[8vw]">
+          <h2 className="retro-text font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
             Thanks
             <br />
             for being
