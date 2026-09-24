@@ -17,7 +17,7 @@ export default function ProjectDetail() {
         <section className="py-20">
           <div className="container">
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-foreground mb-4">Project Not Found</h1>
+              <h1 className="retro-text font-display text-5xl uppercase tracking-tighter mb-6 pr-2">Project Not Found</h1>
               <p className="text-muted-foreground mb-8">The project you're looking for doesn't exist.</p>
               <Button asChild>
                 <Link to="/work">
@@ -47,7 +47,7 @@ export default function ProjectDetail() {
 
           {/* Project Header */}
           <div className="mb-12 opacity-0 animate-fade-in-up stagger-1">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="retro-text font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] mb-6 pr-2">
               {project.name}
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">

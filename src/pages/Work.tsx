@@ -11,7 +11,7 @@ export default function Work() {
         <div className="container">
           {/* Page Header */}
           <div className="max-w-2xl mb-12 opacity-0 animate-fade-in-up">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h1 className="retro-text font-display text-5xl md:text-7xl uppercase tracking-tighter leading-[0.9] mb-6 pr-2">
               Projects
             </h1>
             <p className="text-muted-foreground leading-relaxed">
