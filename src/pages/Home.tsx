@@ -63,9 +63,7 @@ export default function Home() {
             <Link to="/work" className="inline-block">
               <span className="retro-text text-sm">Projects</span>
             </Link>
-            <a href="#contact" className="inline-block">
-              <span className="retro-text text-sm">Contact me</span>
-            </a>
+            <Link to="/contact" className="inline-block">
           </nav>
         </div>
       </header>
