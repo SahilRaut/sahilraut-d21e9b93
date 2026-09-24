@@ -83,12 +83,15 @@ export function BinaryGlitchText({
       onMouseEnter={run}
       aria-label={text}
     >
-      {/* invisible copy reserves the final layout so decoding never reflows the page */}
-      <span className="invisible whitespace-pre" aria-hidden="true">
-        {text}
+      {/* invisible copy reserves the final layout so decoding never reflows the page;
+          per-char spans match the overlay's metrics so both wrap identically */}
+      <span className="invisible whitespace-pre-wrap" aria-hidden="true">
+        {text.split("").map((char, i) => (
+          <span key={i}>{char}</span>
+        ))}
       </span>
       <span
-        className="absolute left-0 top-0 whitespace-pre overflow-hidden"
+        className="absolute left-0 top-0 right-0 whitespace-pre-wrap overflow-hidden"
         aria-hidden="true"
       >
         {frame.map((char, i) => (

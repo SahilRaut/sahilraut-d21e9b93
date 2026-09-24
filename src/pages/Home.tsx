@@ -38,11 +38,11 @@ const skills = [
 
 function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
-    <section className="grid gap-8 border-t border-border py-16 md:grid-cols-2 md:py-24">
-      <h2 className="retro-text font-display text-2xl pr-1 uppercase tracking-tight md:sticky md:top-24 md:self-start">
+    <section className="grid gap-6 border-t border-border py-12 md:grid-cols-2 md:gap-8 md:py-24">
+      <h2 className="retro-text font-display text-xl pr-1 uppercase tracking-tight min-w-0 md:sticky md:top-24 md:self-start md:text-2xl">
         <span className="text-primary">{index}.</span> {title}
       </h2>
-      <div className="space-y-12">{children}</div>
+      <div className="min-w-0 space-y-8 md:space-y-12">{children}</div>
     </section>
   );
 }
@@ -63,12 +63,12 @@ export default function Home() {
               />
             </span>
           </a>
-          <nav className="flex items-center gap-8">
+          <nav className="flex items-center gap-5 md:gap-8">
             <Link to="/work" className="inline-block">
-              <span className="retro-text text-sm">Projects</span>
+              <span className="retro-text text-xs md:text-sm">Projects</span>
             </Link>
             <Link to="/contact" className="inline-block">
-              <span className="retro-text text-sm">Contact me</span>
+              <span className="retro-text text-xs md:text-sm">Contact me</span>
             </Link>
           </nav>
         </div>
@@ -76,16 +76,16 @@ export default function Home() {
 
       {/* Hero */}
       <section id="top" className="relative z-10 flex min-h-screen items-end overflow-hidden pb-10 pt-24">
-        <div className="container absolute inset-x-0 top-24 flex justify-end">
-          <p className="max-w-xs text-right text-xs font-semibold uppercase leading-relaxed tracking-wide">
+        <div className="container absolute inset-x-0 top-20 flex justify-end md:top-24">
+          <p className="max-w-[200px] text-right text-[10px] font-semibold uppercase leading-relaxed tracking-wide md:max-w-xs md:text-xs">
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
         </div>
         <div className="container relative">
-          <p className="font-display text-lg leading-tight text-primary md:text-2xl">
+          <p className="font-display text-base leading-tight text-primary md:text-2xl">
             AI × Robotics
           </p>
-          <h1 className="font-display text-[15vw] uppercase leading-[0.85] tracking-tighter md:text-[9vw]">
+          <h1 className="font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[9vw]">
             <BinaryGlitchText text="Sahil" speed={30} hold={2} />
             <br />
             <BinaryGlitchText text="Raut" speed={30} hold={2} delay={400} />
@@ -95,7 +95,7 @@ export default function Home() {
 
       <main className="container relative z-10">
         <Section index="01" title="About">
-          <p className="text-lg leading-relaxed text-muted-foreground">
+          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
             I'm an AI robotics software developer at <span className="text-foreground">NEURA Robotics</span>, bridging deep learning research and physical hardware so robots can learn and adapt to novel tasks end to end. BEng (Hons) Robotics, UWE Bristol. Outside work: Formula 1, football, chess and cinematography.
           </p>
         </Section>
@@ -104,7 +104,7 @@ export default function Home() {
           {experience.map((e) => (
             <div key={e.title + e.meta} className="group">
               <p className="text-xs text-muted-foreground">{e.meta}</p>
-              <h3 className="mt-2 text-xl font-semibold transition-colors group-hover:text-primary">{e.title}</h3>
+              <h3 className="mt-2 text-lg font-semibold transition-colors group-hover:text-primary md:text-xl">{e.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.body}</p>
             </div>
           ))}
@@ -118,7 +118,7 @@ export default function Home() {
               className="group block rounded-lg border border-border bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
             >
               <div className="flex items-start justify-between gap-4 px-6 pt-5">
-                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="min-w-0 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                   <BinaryGlitchText text={p.name} speed={25} hold={2} />
                 </h3>
                 <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-foreground/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
@@ -148,15 +148,15 @@ export default function Home() {
           </div>
         </Section>
 
-        <section className="border-t border-border py-24">
-          <h2 className="retro-text font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
+        <section className="border-t border-border py-16 md:py-24">
+          <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
             Thanks
             <br />
             for being
             <br />
             here
           </h2>
-          <Link to="/contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
+          <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
             Solving robotics,
             <br />
             one inference layer at a time
