@@ -150,7 +150,7 @@ export default function Home() {
             <br />
             here
           </h2>
-          <a href="#contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
+          <Link to="/contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
             Solving robotics,
             <br />
             one inference layer at a time
