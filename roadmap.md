@@ -1,3 +1,4 @@
 # Roadmap
 
-- [x] Polish original SR logo presentation in header (kept original artwork): slightly larger, subtle red glow, brighter on hover — verified, build OK
+- [ ] GitHub sync — user must connect via + menu → GitHub (cannot be done from chat); explain steps
+- [ ] SEO review — run fast foundations scan, present findings, fix on approval
