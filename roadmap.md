@@ -1,4 +1,4 @@
 # Roadmap
 
-- [ ] GitHub sync — user must connect via + menu → GitHub (cannot be done from chat); explain steps
-- [ ] SEO review — run fast foundations scan, present findings, fix on approval
+- [x] GitHub sync — connected by user via + menu; changes now push to GitHub automatically
+- [x] SEO review — social share image + sitemap added; live after next publish
