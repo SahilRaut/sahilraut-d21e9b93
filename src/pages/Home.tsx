@@ -85,7 +85,7 @@ export default function Home() {
             <BinaryGlitchText text="Raut" speed={30} hold={2} delay={400} />
           </h1>
           <div className="mt-6 flex items-end justify-between text-xs font-medium">
-            <span>AI Robotics Software Developer, based in Germany</span>
+            <span>Solving Robotics</span>
             <span className="text-muted-foreground">Scroll ↓</span>
           </div>
         </div>
