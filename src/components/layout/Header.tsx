@@ -41,22 +41,16 @@ export function Header() {
             <Link
               key={item.href}
               to={item.href}
-              className={cn(
-                "group font-mono text-sm font-semibold uppercase tracking-wide transition-colors",
-                location.pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
-              )}
+              className="inline-block transition-colors"
             >
-              <span className="retro-text">{item.label}</span>
               <span
                 className={cn(
-                  "mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left",
-                  location.pathname === item.href
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
+                  "retro-text",
+                  location.pathname === item.href && "retro-glow"
                 )}
-              />
+              >
+                {item.label}
+              </span>
             </Link>
           ))}
         </nav>
