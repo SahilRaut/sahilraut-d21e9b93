@@ -154,7 +154,7 @@ export default function Home() {
             Solving robotics,
             <br />
             one inference layer at a time
-          </a>
+          </Link>
         </section>
 
         <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
