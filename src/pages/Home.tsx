@@ -7,8 +7,7 @@ import { CodeLabel } from "@/components/ui/CodeLabel";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { TypingCursor } from "@/components/ui/TypingCursor";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
-import { BinaryRain } from "@/components/lab/BinaryRain";
-import { HeroLab } from "@/components/lab/HeroLab";
+import { NeuralField } from "@/components/lab/NeuralField";
 import { ArrowRight } from "lucide-react";
 
 
