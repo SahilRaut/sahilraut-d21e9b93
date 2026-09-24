@@ -72,28 +72,25 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="left" className="w-72 bg-background border-border">
             <div className="flex flex-col gap-6 mt-8">
-              <div className="font-mono text-sm text-primary mb-4">
-                {"// Navigation"}
-              </div>
-              {navItems.map((item, i) => (
-                <SheetClose asChild key={item.href}>
-                  <Link
-                    to={item.href}
-                    className={cn(
-                      "font-mono text-lg transition-colors hover:text-primary py-2",
-                      location.pathname === item.href
-                        ? "text-primary"
-                        : "text-muted-foreground"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="text-primary mr-2">
-                      {String(i + 1).padStart(2, "0")}.
-                    </span>
-                    {item.label}
-                  </Link>
-                </SheetClose>
-              ))}
+            <div className="font-mono text-sm font-semibold uppercase tracking-wide text-primary mb-4">
+              {"// Navigation"}
+            </div>
+            {navItems.map((item) => (
+              <SheetClose asChild key={item.href}>
+                <Link
+                  to={item.href}
+                  className={cn(
+                    "font-mono text-lg font-semibold uppercase tracking-wide transition-colors hover:text-primary py-2",
+                    location.pathname === item.href
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </SheetClose>
+            ))}
             </div>
           </SheetContent>
         </Sheet>
