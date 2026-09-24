@@ -84,8 +84,7 @@ export default function Home() {
             <br />
             <BinaryGlitchText text="Raut" speed={30} hold={2} delay={400} />
           </h1>
-          <div className="mt-6 flex items-end justify-between text-xs font-medium">
-            <span>Solving Robotics</span>
+          <div className="mt-6 flex items-end justify-end text-xs font-medium">
             <span className="text-muted-foreground">Scroll ↓</span>
           </div>
         </div>
@@ -110,9 +109,15 @@ export default function Home() {
 
         <Section index="03" title="Projects">
           {projects.map((p) => (
-            <Link key={p.slug} to={`/work/${p.slug}`} className="group block rounded-lg border border-border p-5 transition-colors hover:border-primary">
+            <Link
+              key={p.slug}
+              to={`/work/${p.slug}`}
+              className="group block rounded-lg border border-border bg-card p-5 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
+            >
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">{p.name}</h3>
+                <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                  <BinaryGlitchText text={p.name} speed={25} hold={2} />
+                </h3>
                 <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
