@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container relative flex h-16 items-center justify-between">
-        {/* Left: Logo + styled name */}
+        {/* Left: Logo */}
         <Link
           to="/"
           aria-label="Sahil Raut — home"
@@ -34,28 +34,30 @@ export function Header() {
           <span className="flex h-10 w-10 items-center justify-center">
             <img src={sahilLogo} alt="" className="h-full w-full object-contain" />
           </span>
-          <span className="font-display text-lg uppercase leading-none tracking-tighter text-foreground md:text-xl">
-            Sahil Raut
-          </span>
         </Link>
 
-        {/* Right: Desktop Navigation with red retro accents */}
+        {/* Right: Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item, i) => (
+          {navItems.map((item) => (
             <Link
               key={item.href}
               to={item.href}
               className={cn(
-                "group font-mono text-sm transition-colors link-underline",
+                "group font-mono text-sm font-semibold uppercase tracking-wide transition-colors",
                 location.pathname === item.href
                   ? "text-primary"
                   : "text-muted-foreground hover:text-primary"
               )}
             >
-              <span className="mr-1.5 text-primary/70 transition-colors group-hover:text-primary">
-                {String(i + 1).padStart(2, "0")}.
-              </span>
               {item.label}
+              <span
+                className={cn(
+                  "mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left",
+                  location.pathname === item.href
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                )}
+              />
             </Link>
           ))}
         </nav>
