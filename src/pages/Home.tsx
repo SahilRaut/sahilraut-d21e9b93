@@ -36,12 +36,6 @@ const skills = [
   "VHDL", "Arduino", "Git", "Team Leadership",
 ];
 
-const contact = [
-  { label: "Email", value: "hisahiltech@gmail.com", href: "mailto:hisahiltech@gmail.com" },
-  { label: "LinkedIn", value: "in/sahil-raut", href: "https://www.linkedin.com/in/sahil-raut-5478b5218/" },
-  { label: "GitHub", value: "github.com/sahilraut", href: "https://github.com/sahilraut" },
-];
-
 function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
     <section className="grid gap-8 border-t border-border py-16 md:grid-cols-2 md:py-24">
@@ -69,9 +63,9 @@ export default function Home() {
             <Link to="/work" className="inline-block">
               <span className="retro-text text-sm">Projects</span>
             </Link>
-            <a href="#contact" className="inline-block">
+            <Link to="/contact" className="inline-block">
               <span className="retro-text text-sm">Contact me</span>
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -150,17 +144,6 @@ export default function Home() {
           </div>
         </Section>
 
-        <div id="contact">
-          <Section index="06" title="Contact">
-            {contact.map((c) => (
-              <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" className="group block">
-                <p className="text-xs text-muted-foreground">{c.label}</p>
-                <p className="mt-1 text-lg font-semibold transition-colors group-hover:text-primary">{c.value}</p>
-              </a>
-            ))}
-          </Section>
-        </div>
-
         <section className="border-t border-border py-24">
           <h2 className="retro-text font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
             Thanks
@@ -169,11 +152,11 @@ export default function Home() {
             <br />
             here
           </h2>
-          <a href="#contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
+          <Link to="/contact" className="mt-8 inline-block font-display text-2xl leading-tight text-primary hover:opacity-80">
             Solving robotics,
             <br />
             one inference layer at a time
-          </a>
+          </Link>
         </section>
 
         <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
