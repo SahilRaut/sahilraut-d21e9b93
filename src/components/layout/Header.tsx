@@ -28,10 +28,14 @@ export function Header() {
         <Link
           to="/"
           aria-label="Sahil Raut — home"
-          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+          className="group flex items-center gap-3 transition-opacity hover:opacity-90"
         >
-          <span className="flex h-10 w-10 items-center justify-center">
-            <img src={sahilLogo} alt="" className="h-full w-full object-contain" />
+          <span className="flex h-11 w-11 items-center justify-center">
+            <img
+              src={sahilLogo}
+              alt=""
+              className="h-full w-full object-contain drop-shadow-[0_0_6px_hsl(var(--primary)/0.35)] transition-[filter] duration-300 group-hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.7)]"
+            />
           </span>
         </Link>
 

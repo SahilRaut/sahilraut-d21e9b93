@@ -54,9 +54,13 @@ export default function Home() {
       {/* Top bar */}
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
-          <a href="#top" aria-label="Sahil Raut — home" className="flex items-center gap-3 transition-opacity hover:opacity-80">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center">
-              <img src={sahilLogo} alt="" className="h-full w-full object-contain" />
+          <a href="#top" aria-label="Sahil Raut — home" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center">
+              <img
+                src={sahilLogo}
+                alt=""
+                className="h-full w-full object-contain drop-shadow-[0_0_6px_hsl(var(--primary)/0.35)] transition-[filter] duration-300 group-hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.7)]"
+              />
             </span>
           </a>
           <nav className="flex items-center gap-8">
