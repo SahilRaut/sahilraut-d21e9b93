@@ -114,13 +114,13 @@ export default function Home() {
               to={`/work/${p.slug}`}
               className="group block rounded-lg border border-border bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start justify-between gap-4 px-6 pt-5">
                 <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                   <BinaryGlitchText text={p.name} speed={25} hold={2} />
                 </h3>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-foreground/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-foreground/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/80">{p.description}</p>
+              <p className="mt-3 px-6 pb-5 text-sm leading-relaxed text-foreground/80">{p.description}</p>
             </Link>
           ))}
         </Section>
