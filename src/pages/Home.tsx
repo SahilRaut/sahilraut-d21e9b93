@@ -8,7 +8,7 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { TypingCursor } from "@/components/ui/TypingCursor";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryRain } from "@/components/lab/BinaryRain";
-import { RoboticsLab } from "@/components/lab/RoboticsLab";
+import { HeroLab } from "@/components/lab/HeroLab";
 import { ArrowRight } from "lucide-react";
 
 
@@ -16,9 +16,10 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-grid overflow-hidden">
-        <BinaryRain className="pointer-events-none absolute inset-0 opacity-70" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <HeroLab className="pointer-events-none absolute inset-0" />
+        <BinaryRain className="pointer-events-none absolute inset-0 opacity-25" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/75 to-transparent" />
         <div className="container relative">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
             {/* Code-style label */}
@@ -57,22 +58,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Live robotics lab */}
-      <section className="py-20">
-        <div className="container">
-          <div className="opacity-0 animate-fade-in-up">
-            <CodeDivider label="Robotics Lab / Live" />
-          </div>
-          <p className="mb-8 max-w-xl text-muted-foreground">
-            A running pick-and-place cell: the arm perceives the cubes, plans a
-            trajectory and sorts them into the correct bins. Pick a mission, change
-            the speed, or drag to look around.
-          </p>
-          <div className="opacity-0 animate-fade-in-up stagger-1">
-            <RoboticsLab />
-          </div>
-        </div>
-      </section>
 
 
       {/* Featured Projects */}

@@ -296,8 +296,8 @@ export function RobotScene({
 
   return (
     <>
-      <color attach="background" args={["#08080a"]} />
-      <fog attach="fog" args={["#08080a", 7, 18]} />
+      <color attach="background" args={["#060a14"]} />
+      <fog attach="fog" args={["#060a14", 7, 18]} />
 
       <ambientLight intensity={0.45} />
       <hemisphereLight args={["#8899aa", "#161616", 0.5]} />
