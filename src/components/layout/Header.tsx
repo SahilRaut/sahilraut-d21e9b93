@@ -9,10 +9,11 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
+  { href: "/work", label: "Projects" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -23,66 +24,77 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link 
-          to="/" 
-          className="font-mono text-sm font-medium text-primary hover:opacity-80 transition-opacity"
+      <div className="container relative flex h-16 items-center justify-between">
+        {/* Left: Desktop Navigation / Mobile Menu */}
+        <div className="flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={cn(
+                  "font-mono text-sm transition-colors hover:text-primary link-underline",
+                  location.pathname === item.href
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile Menu */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="text-foreground">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-72 bg-background border-border">
+              <div className="flex flex-col gap-6 mt-8">
+                <div className="font-mono text-sm text-primary mb-4">
+                  {"// Navigation"}
+                </div>
+                {navItems.map((item) => (
+                  <SheetClose asChild key={item.href}>
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "font-mono text-lg transition-colors hover:text-primary py-2",
+                        location.pathname === item.href
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="text-primary mr-2">→</span>
+                      {item.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        {/* Center: Logo */}
+        <Link
+          to="/"
+          aria-label="Sahil Raut — home"
+          className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center hover:opacity-80 transition-opacity"
         >
-          {"<sahil />"}
+          <img src={sahilLogo} alt="Sahil Raut" className="h-full w-full object-contain" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className={cn(
-                "font-mono text-sm transition-colors hover:text-primary link-underline",
-                location.pathname === item.href
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-foreground">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-72 bg-background border-border">
-            <div className="flex flex-col gap-6 mt-8">
-              <div className="font-mono text-sm text-primary mb-4">
-                {"// Navigation"}
-              </div>
-              {navItems.map((item) => (
-                <SheetClose asChild key={item.href}>
-                  <Link
-                    to={item.href}
-                    className={cn(
-                      "font-mono text-lg transition-colors hover:text-primary py-2",
-                      location.pathname === item.href
-                        ? "text-primary"
-                        : "text-muted-foreground"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="text-primary mr-2">→</span>
-                    {item.label}
-                  </Link>
-                </SheetClose>
-              ))}
-            </div>
-          </SheetContent>
-        </Sheet>
+        {/* Right: Name */}
+        <Link
+          to="/"
+          className="font-mono text-sm font-medium text-foreground hover:text-primary transition-colors"
+        >
+          Sahil Raut
+        </Link>
       </div>
     </header>
   );
