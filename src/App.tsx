@@ -7,7 +7,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
-import About from "./pages/About";
 import Styleguide from "./pages/Styleguide";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -25,7 +24,6 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />
           <Route path="/work/:slug" element={<ProjectDetail />} />
-          <Route path="/about" element={<About />} />
           <Route path="/styleguide" element={<Styleguide />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
