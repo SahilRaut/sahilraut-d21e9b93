@@ -16,9 +16,9 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <HeroLab className="pointer-events-none absolute inset-0" />
-        <BinaryRain className="pointer-events-none absolute inset-0 opacity-25" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/75 to-transparent" />
+        <NeuralField className="pointer-events-none absolute inset-0" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,hsl(var(--background)/0.92),hsl(var(--background)/0.55)_55%,transparent)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
         <div className="container relative">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
             {/* Code-style label */}
