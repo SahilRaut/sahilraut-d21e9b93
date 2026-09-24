@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
-import { NeuralField } from "@/components/lab/NeuralField";
+import { BinaryField } from "@/components/lab/BinaryField";
 import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const experience = [
@@ -55,7 +55,8 @@ function Section({ index, title, children }: { index: string; title: string; chi
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen bg-background text-foreground">
+      <BinaryField />
       {/* Top bar */}
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between text-xs font-medium">
@@ -70,18 +71,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="relative flex min-h-screen items-end overflow-hidden pb-16 pt-24">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <img
-            src="/robot-manipulation.jpg"
-            alt=""
-            className="absolute right-0 top-0 h-[72%] w-full object-cover object-center opacity-45 grayscale-[30%] md:h-full md:w-[68%] md:object-right"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/35 to-background/35" />
-        </div>
-        <NeuralField className="pointer-events-none absolute inset-0 opacity-45 mix-blend-screen" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/20" />
+      <section id="top" className="relative z-10 flex min-h-screen items-end overflow-hidden pb-16 pt-24">
         <div className="container relative">
           <p className="mb-16 ml-auto max-w-xs text-right text-xs font-semibold uppercase leading-relaxed tracking-wide md:mb-32">
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
@@ -101,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="container">
+      <main className="container relative z-10">
         <Section index="01" title="About">
           <p className="text-lg leading-relaxed text-muted-foreground">
             I'm an AI robotics software developer at <span className="text-foreground">NEURA Robotics</span>, bridging deep learning research and physical hardware so robots can learn and adapt to novel tasks end to end. BEng (Hons) Robotics, UWE Bristol. Outside work: Formula 1, football, chess and cinematography.
@@ -176,7 +166,7 @@ export default function Home() {
           </a>
         </section>
 
-        <footer className="pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
+        <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
       </main>
     </div>
   );
