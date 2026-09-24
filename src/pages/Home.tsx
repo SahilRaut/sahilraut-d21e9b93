@@ -45,7 +45,7 @@ const contact = [
 function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
     <section className="grid gap-8 border-t border-border py-16 md:grid-cols-2 md:py-24">
-      <h2 className="font-display text-xl uppercase tracking-tight md:sticky md:top-24 md:self-start">
+      <h2 className="retro-text font-display text-2xl pr-1 uppercase tracking-tight md:sticky md:top-24 md:self-start">
         <span className="text-primary">{index}.</span> {title}
       </h2>
       <div className="space-y-12">{children}</div>
