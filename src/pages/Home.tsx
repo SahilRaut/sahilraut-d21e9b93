@@ -37,7 +37,7 @@ const skills = [
 ];
 
 const contact = [
-  { label: "Email", value: "hello@sahilraut.dev", href: "mailto:hello@sahilraut.dev" },
+  { label: "Email", value: "hisahiltech@gmail.com", href: "mailto:hisahiltech@gmail.com" },
   { label: "LinkedIn", value: "in/sahil-raut", href: "https://www.linkedin.com/in/sahil-raut-5478b5218/" },
   { label: "GitHub", value: "github.com/sahilraut", href: "https://github.com/sahilraut" },
 ];

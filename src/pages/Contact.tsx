@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
 import { Button } from "@/components/ui/button";
@@ -11,26 +10,30 @@ import { useToast } from "@/hooks/use-toast";
 const socialLinks = [
   { href: "https://github.com/sahilraut", icon: Github, label: "GitHub", handle: "@sahilraut" },
   { href: "https://www.linkedin.com/in/sahil-raut-5478b5218/", icon: Linkedin, label: "LinkedIn", handle: "/in/sahil-raut" },
-  { href: "mailto:hello@sahilraut.dev", icon: Mail, label: "Email", handle: "hello@sahilraut.dev" },
+  { href: "mailto:hisahiltech@gmail.com", icon: Mail, label: "Email", handle: "hisahiltech@gmail.com" },
 ];
 
 export default function Contact() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+
+    const data = new FormData(e.currentTarget);
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const message = String(data.get("message") || "");
+
+    const subject = encodeURIComponent(`Portfolio message from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+
+    window.location.href = `mailto:hisahiltech@gmail.com?subject=${subject}&body=${body}`;
+
     toast({
-      title: "Message sent",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Opening your email app",
+      description: "Your message is ready to send to hisahiltech@gmail.com.",
     });
-    
-    setIsSubmitting(false);
+
     (e.target as HTMLFormElement).reset();
   };
 
@@ -96,15 +99,11 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" disabled={isSubmitting} className="font-mono">
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
+                <Button type="submit" className="font-mono">
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-4 w-4" />
+                  </>
                 </Button>
               </form>
             </div>
@@ -137,15 +136,6 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Availability */}
-              <div className="mt-8 p-4 bg-card border border-border rounded-lg">
-                <p className="font-mono text-xs text-muted-foreground mb-2">
-                  <span className="text-primary">/*</span> Availability <span className="text-primary">*/</span>
-                </p>
-                <p className="text-sm text-foreground">
-                  Currently open to new opportunities and freelance projects.
-                </p>
-              </div>
             </div>
           </div>
         </div>
