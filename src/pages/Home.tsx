@@ -4,8 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { NeuralField } from "@/components/lab/NeuralField";
-import logoAsset from "@/assets/sahil-logo.png.asset.json";
-import robotAsset from "@/assets/robot-manipulation.jpg.asset.json";
 
 const experience = [
   {
@@ -61,7 +59,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between text-xs font-medium">
           <a href="#top" aria-label="Sahil Raut — home" className="flex h-10 w-16 items-center">
-            <img src={logoAsset.url} alt="Sahil Raut" className="h-full w-full object-contain object-left" />
+            <img src="/sahil-logo.png" alt="Sahil Raut" className="h-full w-full object-contain object-left" />
           </a>
           <nav className="flex items-center gap-6">
             <Link to="/work" className="hover:text-primary transition-colors">Work</Link>
@@ -78,7 +76,7 @@ export default function Home() {
       <section id="top" className="relative flex min-h-screen items-end overflow-hidden pb-16 pt-24">
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
           <img
-            src={robotAsset.url}
+            src="/robot-manipulation.jpg"
             alt=""
             className="absolute right-0 top-0 h-[72%] w-full object-cover object-center opacity-45 grayscale-[30%] md:h-full md:w-[68%] md:object-right"
           />
