@@ -36,12 +36,6 @@ const skills = [
   "VHDL", "Arduino", "Git", "Team Leadership",
 ];
 
-const contact = [
-  { label: "Email", value: "hisahiltech@gmail.com", href: "mailto:hisahiltech@gmail.com" },
-  { label: "LinkedIn", value: "in/sahil-raut", href: "https://www.linkedin.com/in/sahil-raut-5478b5218/" },
-  { label: "GitHub", value: "github.com/sahilraut", href: "https://github.com/sahilraut" },
-];
-
 function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
     <section className="grid gap-8 border-t border-border py-16 md:grid-cols-2 md:py-24">
