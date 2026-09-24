@@ -86,10 +86,12 @@ export default function Home() {
 
       {/* Hero */}
       <section id="top" className="relative z-10 flex min-h-screen items-end overflow-hidden pb-16 pt-24">
-        <div className="container relative">
-          <p className="mb-16 ml-auto max-w-xs text-right text-xs font-semibold uppercase leading-relaxed tracking-wide md:mb-32">
+        <div className="container absolute inset-x-0 top-24 flex justify-end">
+          <p className="max-w-xs text-right text-xs font-semibold uppercase leading-relaxed tracking-wide">
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
+        </div>
+        <div className="container relative">
           <p className="font-display text-lg leading-tight text-primary md:text-2xl">
             AI × Robotics
           </p>
