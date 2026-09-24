@@ -4,13 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
   { href: "https://github.com/sahilraut", icon: Github, label: "GitHub", handle: "@sahilraut" },
-  { href: "https://www.linkedin.com/in/sahil-raut-5478b5218/", icon: Linkedin, label: "LinkedIn", handle: "/in/sahil-raut" },
-  { href: "mailto:hisahiltech@gmail.com", icon: Mail, label: "Email", handle: "hisahiltech@gmail.com" },
+  { href: "https://www.linkedin.com/in/sahil-raut-5478b5218/", icon: Linkedin, label: "LinkedIn", handle: "/in/sahil-raut-5478b5218" },
 ];
 
 export default function Contact() {
