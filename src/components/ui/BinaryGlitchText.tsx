@@ -79,23 +79,32 @@ export function BinaryGlitchText({
 
   return (
     <Tag
-      className={cn("inline-block cursor-default", className)}
+      className={cn("relative inline-block cursor-default align-bottom", className)}
       onMouseEnter={run}
       aria-label={text}
     >
-      {frame.map((char, i) => (
-        <span
-          key={`${i}-${char}`}
-          aria-hidden="true"
-          className={
-            resolved[i]
-              ? undefined
-              : "font-mono text-primary/80 [text-shadow:0_0_12px_hsl(var(--primary)/0.55)]"
-          }
-        >
-          {char}
-        </span>
-      ))}
+      {/* invisible copy reserves the final layout so decoding never reflows the page */}
+      <span className="invisible whitespace-pre" aria-hidden="true">
+        {text}
+      </span>
+      <span
+        className="absolute left-0 top-0 whitespace-pre overflow-hidden"
+        aria-hidden="true"
+      >
+        {frame.map((char, i) => (
+          <span
+            key={`${i}-${char}`}
+            className={
+              resolved[i]
+                ? undefined
+                : "text-primary/80 [text-shadow:0_0_12px_hsl(var(--primary)/0.55)]"
+            }
+          >
+            {char}
+          </span>
+        ))}
+      </span>
     </Tag>
   );
 }
+

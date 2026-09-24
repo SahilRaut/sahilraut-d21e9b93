@@ -354,7 +354,9 @@ export function RobotScene({
               <meshStandardMaterial
                 color={side === "LEFT" ? "#ff2b44" : "#3b82f6"}
                 emissive={side === "LEFT" ? "#ff2b44" : "#3b82f6"}
-                emissiveIntensity={0.8}
+                emissiveIntensity={0.35}
+                toneMapped={false}
+
               />
             </mesh>
           </group>

@@ -17,7 +17,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center bg-grid overflow-hidden">
-        <BinaryRain className="pointer-events-none absolute inset-0 opacity-40" />
+        <BinaryRain className="pointer-events-none absolute inset-0 opacity-70" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
         <div className="container relative">
           <div className="max-w-3xl opacity-0 animate-fade-in-up">
