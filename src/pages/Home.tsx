@@ -66,13 +66,11 @@ export default function Home() {
             </span>
           </a>
           <nav className="flex items-center gap-8">
-            <Link to="/work" className="group inline-block">
+            <Link to="/work" className="inline-block">
               <span className="retro-text text-sm">Projects</span>
-              <span className="mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
             </Link>
-            <a href="#contact" className="group inline-block">
+            <a href="#contact" className="inline-block">
               <span className="retro-text text-sm">Contact me</span>
-              <span className="mt-1 block h-0.5 bg-primary transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
             </a>
           </nav>
         </div>
