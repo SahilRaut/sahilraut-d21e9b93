@@ -39,11 +39,11 @@ export function RedGrid({ className = "" }: { className?: string }) {
       // Grid lines.
       ctx.lineWidth = 1;
       for (let x = 0; x <= w; x += cell) {
-        ctx.strokeStyle = `hsl(${primary} / ${0.05 + vign(x, 0) * 0.1})`;
+        ctx.strokeStyle = `hsl(${primary} / ${0.09 + vign(x, 0) * 0.18})`;
         ctx.beginPath(); ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, h); ctx.stroke();
       }
       for (let y = 0; y <= h; y += cell) {
-        ctx.strokeStyle = `hsl(${primary} / ${0.05 + vign(0, y) * 0.1})`;
+        ctx.strokeStyle = `hsl(${primary} / ${0.09 + vign(0, y) * 0.18})`;
         ctx.beginPath(); ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); ctx.stroke();
       }
 
