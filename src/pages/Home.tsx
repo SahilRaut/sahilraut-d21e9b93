@@ -82,7 +82,7 @@ export default function Home() {
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
         </div>
-        <AsciiRobotArm className="pointer-events-none absolute bottom-6 right-0 h-[45vh] w-full md:bottom-10 md:right-4 md:h-[62vh] md:w-[48vw] opacity-90" />
+        <AsciiRobotArm className="pointer-events-none absolute bottom-[calc(2.5rem-4.5vh)] right-0 h-[45vh] w-full md:bottom-[calc(2.5rem-6.2vh)] md:right-4 md:h-[62vh] md:w-[48vw] opacity-90" />
         <div className="container relative">
           <p className="font-display text-base leading-tight text-primary md:text-2xl">
             AI × Robotics
