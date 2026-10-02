@@ -149,21 +149,23 @@ export default function Home() {
           </div>
         </Section>
 
-        <section className="relative overflow-hidden border-t border-border pb-[38vh] pt-16 md:pb-[46vh] md:pt-24">
-          <AsciiRobotArm className="pointer-events-none absolute bottom-0 right-[-6vw] h-[38vh] w-full md:right-[-4vw] md:h-[46vh] md:w-[46vw] opacity-90" />
-          <div className="relative z-10">
-            <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
-              Thanks
-              <br />
-              for being
-              <br />
-              here
-            </h2>
-            <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
-              Solving robotics,
-              <br />
-              one inference layer at a time
-            </Link>
+        <section className="relative overflow-hidden border-t border-border py-16 md:py-24">
+          <div className="relative z-10 flex flex-col items-start gap-10 md:flex-row md:items-end md:justify-between md:gap-6">
+            <div className="min-w-0">
+              <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
+                Thanks
+                <br />
+                for being
+                <br />
+                here
+              </h2>
+              <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
+                Solving robotics,
+                <br />
+                one inference layer at a time
+              </Link>
+            </div>
+            <AsciiRobotArm className="pointer-events-none order-last h-[32vh] w-full self-end md:order-none md:h-[40vh] md:w-[34vw] md:shrink-0 opacity-90" />
           </div>
         </section>
 
