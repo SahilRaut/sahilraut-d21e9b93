@@ -83,7 +83,8 @@ export default function Home() {
           </p>
         </div>
         <div className="container relative">
-          <p className="font-display text-base leading-tight text-primary md:text-2xl">
+          {/* nudge right so the "A" lines up with the S glyph of SAHIL (S side-bearing ≈ 0.043 × h1 size) */}
+          <p className="ml-[0.56vw] font-display text-base leading-tight text-primary md:ml-[0.39vw] md:text-2xl">
             AI × Robotics
           </p>
           <h1 className="font-display text-[13vw] uppercase leading-[0.85] tracking-tighter md:text-[9vw]">
