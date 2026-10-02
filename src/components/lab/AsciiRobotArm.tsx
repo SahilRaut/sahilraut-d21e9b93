@@ -37,10 +37,10 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       // world units: x 0..1 (aspect corrected), y 0..1
       const ease = (v: number) => 0.5 - Math.cos(Math.PI * Math.max(0, Math.min(1, v))) / 2;
       const FLOOR = 0.9, BOX = 0.05, BY = FLOOR - BOX / 2;
-      const AX = 0.27, BX = 0.73, HI = 0.6, OPEN = 0.045, SHUT = BOX / 2 + 0.006;
+      const AX = 0.22, BX = 0.78, HI = 0.6, OPEN = 0.045, SHUT = BOX / 2 + 0.006;
       // keyframes: tip x, tip y, grip width, carrying, duration
       const K: [number, number, number, boolean, number][] = [
-        [0.5, 0.42, OPEN, false, 0.9],
+        [0.5, 0.42, OPEN, false, 1.6], // wait while block slides in
         [AX, HI, OPEN, false, 0.7],
         [AX, BY, OPEN, false, 0.4],
         [AX, BY, SHUT, true, 0.5],
@@ -49,20 +49,18 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
         [BX, BY, SHUT, true, 0.4],
         [BX, BY, OPEN, false, 0.5],
         [BX, HI, OPEN, false, 0.9],
+        [0.5, 0.42, OPEN, false, 1.0], // return home while block slides out
       ];
       const total = K.reduce((s, k) => s + k[4], 0);
-      let tt = reduce ? 0 : (now / 1000) % (total * 2);
-      const phase2 = tt >= total; // second half returns the box from B to A
-      if (phase2) tt -= total;
+      let tt = reduce ? 0 : (now / 1000) % total;
       let i = 0;
       while (tt > K[i][4]) { tt -= K[i][4]; i++; }
       const cur = K[i], nxt = K[(i + 1) % K.length];
       const e = ease(tt / cur[4]);
-      const flip = (x: number) => (phase2 ? 1 - x : x);
-      const px = flip(cur[0] + (nxt[0] - cur[0]) * e);
+      const px = cur[0] + (nxt[0] - cur[0]) * e;
       const py = cur[1] + (nxt[1] - cur[1]) * e;
       const grip = cur[2] + (nxt[2] - cur[2]) * e;
-      const carry = cur[3] && (i !== 6 || true) && !(i === 7);
+      const carry = cur[3] && i !== 7;
 
       const TOOL = 0.08;
       const wr = { x: px, y: py - TOOL };
