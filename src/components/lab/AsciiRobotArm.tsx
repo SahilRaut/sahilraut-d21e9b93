@@ -111,6 +111,18 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
             const dd = Math.hypot(px - j.x, py - j.y);
             if (dd < 0.03) v = Math.max(v, 1);
           }
+          // floor line, fading out toward both edges
+          const fd = Math.abs(py - (FLOOR + 0.008));
+          if (fd < 0.007) {
+            const edge = Math.min((px - 0.02) / 0.22, (0.98 - px) / 0.22, 1);
+            if (edge > 0) {
+              const f = edge * edge * (3 - 2 * edge);
+              v = Math.max(v, (1 - fd / 0.007) * 0.95 * f);
+            }
+          }
+          // soft glow pooling under the base
+          const gd = Math.hypot(px - 0.5, (py - (FLOOR + 0.035)) * 2.4);
+          if (gd < 0.17) v = Math.max(v, (1 - gd / 0.17) * 0.3);
           if (v <= 0.02) continue;
           ctx.fillStyle = `hsl(${color} / ${0.35 + v * 0.65})`;
           ctx.fillText(CHARS[Math.min(CHARS.length - 1, Math.floor(v * CHARS.length))], c * cw, r * cell);
