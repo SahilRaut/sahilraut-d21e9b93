@@ -64,7 +64,7 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
 
       const TOOL = 0.08;
       const wr = { x: px, y: py - TOOL };
-      const base = { x: 0.5, y: FLOOR }, sh = { x: 0.5, y: 0.6 };
+      const base = { x: 0.5, y: FLOOR };
       const L1 = 0.27, L2 = 0.25;
       const dx = wr.x - sh.x, dy = wr.y - sh.y;
       const d = Math.max(Math.abs(L1 - L2) + 0.01, Math.min(Math.hypot(dx, dy), L1 + L2 - 0.001));
