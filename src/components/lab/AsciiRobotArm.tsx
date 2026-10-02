@@ -97,7 +97,10 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const joints = [sh, elb, wr];
 
       const aspect = w / h;
-      const Z = 1.35; // zoom — draws the figure larger inside the same canvas
+      // auto-fit: zoom so the artwork fills the canvas at any aspect ratio
+      const ART_W = 0.78;  // world width the arm + block need (x ≈ 0.11..0.89)
+      const ART_TOP = 0.28; // highest world y the artwork reaches (with headroom)
+      const Z = Math.min(aspect / ART_W, FLOOR / (FLOOR - ART_TOP));
       for (let r = 0; r < rows; r++) {
         const py = (r + 0.5) / rows;
         const wy = FLOOR - (FLOOR - py) / Z; // pixel → world y, anchored at the floor
