@@ -149,7 +149,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <section className="relative overflow-hidden border-t border-border py-16 md:py-24">
+        <section className="relative overflow-hidden border-t border-border pt-12 pb-4 md:pt-16 md:pb-6">
           <div className="relative z-10 flex flex-col items-start gap-10 md:flex-row md:items-start md:justify-between md:gap-6">
             <div className="min-w-0">
               <h2 className="retro-text font-display text-[7vw] uppercase leading-[0.9] tracking-tighter md:text-[4.5vw]">
@@ -165,7 +165,7 @@ export default function Home() {
                 one inference layer at a time
               </Link>
             </div>
-            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[30vh] w-full max-w-[320px] md:order-none md:ml-0 md:h-[46vh] md:max-w-[32vw] md:shrink-0 opacity-90" />
+            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[28vh] w-full max-w-[300px] md:order-none md:ml-0 md:h-[40vh] md:max-w-[30vw] md:shrink-0 opacity-90" />
           </div>
         </section>
 
