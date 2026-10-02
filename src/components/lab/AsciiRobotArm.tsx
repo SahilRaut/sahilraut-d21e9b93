@@ -114,7 +114,8 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
           // floor line, fading out toward both edges
           const fd = Math.abs(py - (FLOOR + 0.008));
           if (fd < 0.007) {
-            const edge = Math.min((px - 0.02) / 0.22, (0.98 - px) / 0.22, 1);
+            const u = (px - 0.5) / aspect + 0.5; // 0 at canvas left, 1 at right
+            const edge = Math.min(u / 0.24, (1 - u) / 0.24, 1);
             if (edge > 0) {
               const f = edge * edge * (3 - 2 * edge);
               v = Math.max(v, (1 - fd / 0.007) * 0.95 * f);
