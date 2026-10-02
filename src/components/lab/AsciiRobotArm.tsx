@@ -117,6 +117,11 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
             const dd = Math.hypot(px - j.x, py - j.y);
             if (dd < 0.03) v = Math.max(v, 1);
           }
+          for (const b of bolts) {
+            const dd = Math.hypot(px - b.x, py - b.y);
+            if (dd < 0.014) v = Math.max(v, 1);
+          }
+
           if (v <= 0.02) continue;
           ctx.fillStyle = `hsl(${color} / ${0.35 + v * 0.65})`;
           ctx.fillText(CHARS[Math.min(CHARS.length - 1, Math.floor(v * CHARS.length))], c * cw, r * cell);
