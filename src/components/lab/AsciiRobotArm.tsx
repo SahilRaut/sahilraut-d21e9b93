@@ -86,9 +86,13 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
         [wr.x - grip, fy, wr.x - grip, py + 0.02, 0.006], // fingers
         [wr.x + grip, fy, wr.x + grip, py + 0.02, 0.006],
       ];
-      // box
-      const restX = flip(i < 3 || (i === 3 && !cur[3]) ? AX : BX);
-      const box = carry ? { x: px, y: py } : { x: i >= 7 ? flip(BX) : restX, y: BY };
+      // box: slides in from left → rests at A → carried → rests at B → slides out right
+      let box: { x: number; y: number };
+      if (carry) box = { x: px, y: py };
+      else if (i === 0) box = { x: -0.08 + (AX + 0.08) * ease(tt / cur[4]), y: BY };
+      else if (i < 7) box = { x: AX, y: BY };
+      else if (i === 8) box = { x: BX, y: BY };
+      else box = { x: BX + (1.1 - BX) * ease(tt / cur[4]), y: BY };
       const hb = BOX / 2 - 0.01;
       segs.push([box.x - hb, box.y, box.x + hb, box.y, BOX / 2 - 0.004]);
       const joints = [sh, elb, wr];
