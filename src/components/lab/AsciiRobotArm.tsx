@@ -76,7 +76,6 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
 
       const fy = wr.y + 0.035;
       const segs: Seg[] = [
-        [0.04, FLOOR + 0.008, 0.96, FLOOR + 0.008, 0.004], // floor
         [0.42, FLOOR - 0.015, 0.58, FLOOR - 0.015, 0.018], // base plate
         [base.x, FLOOR - 0.03, sh.x, sh.y, 0.03], // pedestal
         [sh.x, sh.y, elb.x, elb.y, 0.022], // upper arm
