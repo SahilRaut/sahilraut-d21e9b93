@@ -77,8 +77,10 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const fy = wr.y + 0.035;
       const segs: Seg[] = [
         [0.04, FLOOR + 0.008, 0.96, FLOOR + 0.008, 0.004], // floor
-        [0.42, FLOOR - 0.015, 0.58, FLOOR - 0.015, 0.018], // base plate
-        [base.x, FLOOR - 0.03, sh.x, sh.y, 0.03], // pedestal
+        [0.36, FLOOR - 0.022, 0.64, FLOOR - 0.022, 0.022], // mount plate
+        [0.5, FLOOR - 0.038, 0.5, 0.62, 0.028], // pedestal
+        [0.41, FLOOR - 0.032, 0.486, 0.68, 0.008], // taper skirt left
+        [0.59, FLOOR - 0.032, 0.514, 0.68, 0.008], // taper skirt right
         [sh.x, sh.y, elb.x, elb.y, 0.022], // upper arm
         [elb.x, elb.y, wr.x, wr.y, 0.016], // forearm
         [wr.x, wr.y, wr.x, fy, 0.012], // wrist
