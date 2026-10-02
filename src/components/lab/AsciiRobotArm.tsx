@@ -98,6 +98,9 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const hb = BOX / 2 - 0.01;
       segs.push([box.x - hb, box.y, box.x + hb, box.y, BOX / 2 - 0.004]);
       const joints = [sh, elb, wr];
+      // bolt dots on the mount plate corners
+      const bolts = [0.385, 0.455, 0.545, 0.615].map((bx) => ({ x: bx, y: FLOOR - 0.022 }));
+
 
       const aspect = w / h;
       for (let r = 0; r < rows; r++) {
