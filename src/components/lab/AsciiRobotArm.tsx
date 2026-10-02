@@ -35,39 +35,64 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       ctx.textBaseline = "top";
 
       // world units: x 0..1 (aspect corrected), y 0..1
-      const t = reduce ? 0.3 : ((now / 1000) % 8) / 8;
       const ease = (v: number) => 0.5 - Math.cos(Math.PI * Math.max(0, Math.min(1, v))) / 2;
-      const A = { x: 0.3, y: 0.82 }, B = { x: 0.7, y: 0.82 };
-      let tx: number, ty: number, carry = false;
-      if (t < 0.15) { tx = 0.5 + (A.x - 0.5) * ease(t / 0.15); ty = 0.45 + (A.y - 0.06 - 0.45) * ease(t / 0.15); }
-      else if (t < 0.25) { tx = A.x; ty = A.y - 0.06; }
-      else if (t < 0.6) { const k = ease((t - 0.25) / 0.35); carry = true; tx = A.x + (B.x - A.x) * k; ty = A.y - 0.06 - Math.sin(Math.PI * k) * 0.3; }
-      else if (t < 0.7) { tx = B.x; ty = B.y - 0.06; carry = true; }
-      else { const k = ease((t - 0.7) / 0.3); tx = B.x + (0.5 - B.x) * k; ty = B.y - 0.06 + (0.45 - B.y + 0.06) * k; }
+      const FLOOR = 0.9, BOX = 0.05, BY = FLOOR - BOX / 2;
+      const AX = 0.27, BX = 0.73, HI = 0.6, OPEN = 0.045, SHUT = BOX / 2 + 0.006;
+      // keyframes: tip x, tip y, grip width, carrying, duration
+      const K: [number, number, number, boolean, number][] = [
+        [0.5, 0.42, OPEN, false, 0.9],
+        [AX, HI, OPEN, false, 0.7],
+        [AX, BY, OPEN, false, 0.4],
+        [AX, BY, SHUT, true, 0.5],
+        [AX, HI, SHUT, true, 1.0],
+        [BX, HI, SHUT, true, 0.7],
+        [BX, BY, SHUT, true, 0.4],
+        [BX, BY, OPEN, false, 0.5],
+        [BX, HI, OPEN, false, 0.9],
+      ];
+      const total = K.reduce((s, k) => s + k[4], 0);
+      let tt = reduce ? 0 : (now / 1000) % (total * 2);
+      const phase2 = tt >= total; // second half returns the box from B to A
+      if (phase2) tt -= total;
+      let i = 0;
+      while (tt > K[i][4]) { tt -= K[i][4]; i++; }
+      const cur = K[i], nxt = K[(i + 1) % K.length];
+      const e = ease(tt / cur[4]);
+      const flip = (x: number) => (phase2 ? 1 - x : x);
+      const px = flip(cur[0] + (nxt[0] - cur[0]) * e);
+      const py = cur[1] + (nxt[1] - cur[1]) * e;
+      const grip = cur[2] + (nxt[2] - cur[2]) * e;
+      const carry = cur[3] && (i !== 6 || true) && !(i === 7);
 
-      const base = { x: 0.5, y: 0.82 }, sh = { x: 0.5, y: 0.7 };
-      const L1 = 0.3, L2 = 0.28;
-      const dx = tx - sh.x, dy = ty - sh.y;
-      const d = Math.min(Math.hypot(dx, dy), L1 + L2 - 0.001);
+      const TOOL = 0.08;
+      const wr = { x: px, y: py - TOOL };
+      const base = { x: 0.5, y: FLOOR }, sh = { x: 0.5, y: 0.6 };
+      const L1 = 0.27, L2 = 0.25;
+      const dx = wr.x - sh.x, dy = wr.y - sh.y;
+      const d = Math.max(Math.abs(L1 - L2) + 0.01, Math.min(Math.hypot(dx, dy), L1 + L2 - 0.001));
       const a = Math.atan2(dy, dx);
       const b = Math.acos((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d));
-      const elb = { x: sh.x + L1 * Math.cos(a - b), y: sh.y + L1 * Math.sin(a - b) };
-      const wr = { x: elb.x + L2 * Math.cos(Math.atan2(ty - elb.y, tx - elb.x)), y: elb.y + L2 * Math.sin(Math.atan2(ty - elb.y, tx - elb.x)) };
-      const grip = carry ? 0.018 : 0.035;
+      const e1 = { x: sh.x + L1 * Math.cos(a - b), y: sh.y + L1 * Math.sin(a - b) };
+      const e2 = { x: sh.x + L1 * Math.cos(a + b), y: sh.y + L1 * Math.sin(a + b) };
+      const elb = e1.y < e2.y ? e1 : e2; // elbow up
 
+      const fy = wr.y + 0.035;
       const segs: Seg[] = [
-        [0.38, 0.86, 0.62, 0.86, 0.02],
-        [base.x, base.y, sh.x, sh.y, 0.035],
-        [sh.x, sh.y, elb.x, elb.y, 0.03],
-        [elb.x, elb.y, wr.x, wr.y, 0.022],
-        [wr.x - grip, wr.y, wr.x + grip, wr.y, 0.008],
-        [wr.x - grip, wr.y, wr.x - grip, wr.y + 0.04, 0.007],
-        [wr.x + grip, wr.y, wr.x + grip, wr.y + 0.04, 0.007],
-        [0.05, 0.9, 0.95, 0.9, 0.004],
+        [0.04, FLOOR + 0.008, 0.96, FLOOR + 0.008, 0.004], // floor
+        [0.42, FLOOR - 0.015, 0.58, FLOOR - 0.015, 0.018], // base plate
+        [base.x, FLOOR - 0.03, sh.x, sh.y, 0.03], // pedestal
+        [sh.x, sh.y, elb.x, elb.y, 0.022], // upper arm
+        [elb.x, elb.y, wr.x, wr.y, 0.016], // forearm
+        [wr.x, wr.y, wr.x, fy, 0.012], // wrist
+        [wr.x - grip, fy, wr.x + grip, fy, 0.007], // gripper bar
+        [wr.x - grip, fy, wr.x - grip, py + 0.02, 0.006], // fingers
+        [wr.x + grip, fy, wr.x + grip, py + 0.02, 0.006],
       ];
-      const box = carry ? { x: wr.x, y: wr.y + 0.05 } : t < 0.25 || t >= 0.95 ? { x: A.x, y: A.y + 0.04 } : { x: B.x, y: B.y + 0.04 };
-      if (t >= 0.7 && t < 0.95) { box.x = B.x; box.y = B.y + 0.04; }
-      segs.push([box.x - 0.012, box.y, box.x + 0.012, box.y, 0.02]);
+      // box
+      const restX = flip(i < 3 || (i === 3 && !cur[3]) ? AX : BX);
+      const box = carry ? { x: px, y: py } : { x: i >= 7 ? flip(BX) : restX, y: BY };
+      const hb = BOX / 2 - 0.01;
+      segs.push([box.x - hb, box.y, box.x + hb, box.y, BOX / 2 - 0.004]);
       const joints = [sh, elb, wr];
 
       const aspect = w / h;
