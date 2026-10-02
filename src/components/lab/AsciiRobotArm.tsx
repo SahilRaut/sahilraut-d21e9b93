@@ -76,7 +76,6 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
 
       const fy = wr.y + 0.035;
       const segs: Seg[] = [
-        [0.04, FLOOR + 0.008, 0.96, FLOOR + 0.008, 0.004], // floor
         [0.42, FLOOR - 0.015, 0.58, FLOOR - 0.015, 0.018], // base plate
         [base.x, FLOOR - 0.03, sh.x, sh.y, 0.03], // pedestal
         [sh.x, sh.y, elb.x, elb.y, 0.022], // upper arm
@@ -112,6 +111,19 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
             const dd = Math.hypot(px - j.x, py - j.y);
             if (dd < 0.03) v = Math.max(v, 1);
           }
+          // floor line, fading out toward both edges
+          const fd = Math.abs(py - (FLOOR + 0.008));
+          if (fd < 0.007) {
+            const u = (px - 0.5) / aspect + 0.5; // 0 at canvas left, 1 at right
+            const edge = Math.min(u / 0.24, (1 - u) / 0.24, 1);
+            if (edge > 0) {
+              const f = edge * edge * (3 - 2 * edge);
+              v = Math.max(v, (1 - fd / 0.007) * 0.95 * f);
+            }
+          }
+          // soft glow pooling under the base
+          const gd = Math.hypot(px - 0.5, (py - (FLOOR + 0.035)) * 2.4);
+          if (gd < 0.17) v = Math.max(v, (1 - gd / 0.17) * 0.3);
           if (v <= 0.02) continue;
           ctx.fillStyle = `hsl(${color} / ${0.35 + v * 0.65})`;
           ctx.fillText(CHARS[Math.min(CHARS.length - 1, Math.floor(v * CHARS.length))], c * cw, r * cell);
