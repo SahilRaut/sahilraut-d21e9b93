@@ -165,7 +165,7 @@ export default function Home() {
                 one inference layer at a time
               </Link>
             </div>
-            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[32vh] w-[70%] md:order-none md:ml-0 md:h-[40vh] md:w-[34vw] md:shrink-0 opacity-90" />
+            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[62vh] w-full md:order-none md:ml-0 md:h-[68vh] md:w-[46vw] md:shrink-0 opacity-90" />
           </div>
         </section>
 
