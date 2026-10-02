@@ -152,20 +152,20 @@ export default function Home() {
         <section className="relative overflow-hidden border-t border-border py-16 md:py-24">
           <div className="relative z-10 flex flex-col items-start gap-10 md:flex-row md:items-end md:justify-between md:gap-6">
             <div className="min-w-0">
-              <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
+              <h2 className="retro-text font-display text-[7vw] uppercase leading-[0.9] tracking-tighter md:text-[4.5vw]">
                 Thanks
                 <br />
                 for being
                 <br />
                 here
               </h2>
-              <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
+              <Link to="/contact" className="mt-5 inline-block font-display text-base leading-tight text-primary hover:opacity-80 md:mt-6 md:text-xl">
                 Solving robotics,
                 <br />
                 one inference layer at a time
               </Link>
             </div>
-            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[62vh] w-full md:order-none md:ml-0 md:h-[68vh] md:w-[46vw] md:shrink-0 opacity-90" />
+            <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[26vh] w-full max-w-[260px] md:order-none md:ml-0 md:h-[34vh] md:max-w-[22vw] md:shrink-0 opacity-90" />
           </div>
         </section>
 
