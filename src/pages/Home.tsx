@@ -39,7 +39,7 @@ const skills = [
 function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
   return (
     <section className="grid gap-6 border-t border-border py-12 md:grid-cols-2 md:gap-8 md:py-24">
-      <h2 className="retro-text font-display text-xl pr-1 uppercase tracking-tight min-w-0 md:sticky md:top-24 md:self-start md:text-2xl">
+      <h2 className="font-display text-xl uppercase tracking-tight min-w-0 md:sticky md:top-24 md:self-start">
         <span className="text-primary">{index}.</span> {title}
       </h2>
       <div className="min-w-0 space-y-8 md:space-y-12">{children}</div>
