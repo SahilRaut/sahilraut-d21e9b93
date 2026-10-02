@@ -64,7 +64,7 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
 
       const TOOL = 0.08;
       const wr = { x: px, y: py - TOOL };
-      const sh = { x: 0.5, y: 0.6 };
+      const base = { x: 0.5, y: FLOOR }, sh = { x: 0.5, y: 0.6 };
       const L1 = 0.27, L2 = 0.25;
       const dx = wr.x - sh.x, dy = wr.y - sh.y;
       const d = Math.max(Math.abs(L1 - L2) + 0.01, Math.min(Math.hypot(dx, dy), L1 + L2 - 0.001));
@@ -77,10 +77,8 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const fy = wr.y + 0.035;
       const segs: Seg[] = [
         [0.04, FLOOR + 0.008, 0.96, FLOOR + 0.008, 0.004], // floor
-        [0.36, FLOOR - 0.022, 0.64, FLOOR - 0.022, 0.022], // mount plate
-        [0.5, FLOOR - 0.038, 0.5, 0.62, 0.028], // pedestal
-        [0.41, FLOOR - 0.032, 0.486, 0.68, 0.008], // taper skirt left
-        [0.59, FLOOR - 0.032, 0.514, 0.68, 0.008], // taper skirt right
+        [0.42, FLOOR - 0.015, 0.58, FLOOR - 0.015, 0.018], // base plate
+        [base.x, FLOOR - 0.03, sh.x, sh.y, 0.03], // pedestal
         [sh.x, sh.y, elb.x, elb.y, 0.022], // upper arm
         [elb.x, elb.y, wr.x, wr.y, 0.016], // forearm
         [wr.x, wr.y, wr.x, fy, 0.012], // wrist
@@ -98,9 +96,6 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const hb = BOX / 2 - 0.01;
       segs.push([box.x - hb, box.y, box.x + hb, box.y, BOX / 2 - 0.004]);
       const joints = [sh, elb, wr];
-      // bolt dots on the mount plate corners
-      const bolts = [0.385, 0.455, 0.545, 0.615].map((bx) => ({ x: bx, y: FLOOR - 0.022 }));
-
 
       const aspect = w / h;
       for (let r = 0; r < rows; r++) {
@@ -117,11 +112,6 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
             const dd = Math.hypot(px - j.x, py - j.y);
             if (dd < 0.03) v = Math.max(v, 1);
           }
-          for (const b of bolts) {
-            const dd = Math.hypot(px - b.x, py - b.y);
-            if (dd < 0.014) v = Math.max(v, 1);
-          }
-
           if (v <= 0.02) continue;
           ctx.fillStyle = `hsl(${color} / ${0.35 + v * 0.65})`;
           ctx.fillText(CHARS[Math.min(CHARS.length - 1, Math.floor(v * CHARS.length))], c * cw, r * cell);
