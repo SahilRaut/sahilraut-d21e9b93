@@ -149,17 +149,21 @@ export default function Home() {
         </Section>
 
         <section className="border-t border-border py-16 md:py-24">
-          <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
+          <h2 className="font-display text-[11vw] uppercase leading-[0.85] tracking-tighter text-foreground md:text-[8vw]">
             Thanks
             <br />
             for being
             <br />
             here
           </h2>
-          <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
+          <Link
+            to="/contact"
+            className="group mt-6 inline-flex items-center gap-2 font-display text-lg leading-tight text-foreground/90 transition-colors hover:text-primary md:mt-8 md:text-2xl"
+          >
             Solving robotics,
             <br />
             one inference layer at a time
+            <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </section>
 
