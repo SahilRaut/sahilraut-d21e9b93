@@ -77,7 +77,7 @@ export default function Home() {
 
       {/* Hero */}
       <section id="top" className="relative z-10 flex min-h-screen items-end overflow-hidden pb-10 pt-24">
-        <div className="container absolute inset-x-0 top-20 flex justify-end pr-2 md:top-24 md:pr-4">
+        <div className="container absolute inset-x-0 top-20 flex justify-end md:top-24">
           <p className="max-w-[200px] text-right text-[10px] font-semibold uppercase leading-relaxed tracking-wide md:max-w-xs md:text-xs">
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
