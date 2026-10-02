@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryField } from "@/components/lab/BinaryField";
+import { AsciiRobotArm } from "@/components/lab/AsciiRobotArm";
 import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const experience = [
@@ -81,6 +82,7 @@ export default function Home() {
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
         </div>
+        <AsciiRobotArm className="pointer-events-none absolute inset-x-0 top-[18%] mx-auto h-[55vh] w-full max-w-3xl opacity-80 md:right-0 md:left-auto md:top-[15%] md:h-[70vh] md:w-[55vw]" />
         <div className="container relative">
           <p className="font-display text-base leading-tight text-primary md:text-2xl">
             AI × Robotics
