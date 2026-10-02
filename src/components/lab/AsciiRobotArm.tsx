@@ -97,24 +97,26 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
       const joints = [sh, elb, wr];
 
       const aspect = w / h;
+      const Z = 1.35; // zoom — draws the figure larger inside the same canvas
       for (let r = 0; r < rows; r++) {
         const py = (r + 0.5) / rows;
+        const wy = FLOOR - (FLOOR - py) / Z; // pixel → world y, anchored at the floor
         for (let c = 0; c < cols; c++) {
-          const px = 0.5 + (((c + 0.5) / cols) - 0.5) * aspect;
+          const u = (c + 0.5) / cols;
+          const wx = 0.5 + (u - 0.5) * (aspect / Z); // pixel → world x
           let v = 0;
           for (const s of segs) {
-            const dd = distSeg(px, py, s);
+            const dd = distSeg(wx, wy, s);
             if (dd < s[4]) v = Math.max(v, 1 - (dd / s[4]) * 0.6);
             else if (dd < s[4] * 2) v = Math.max(v, 0.25 * (1 - (dd - s[4]) / s[4]));
           }
           for (const j of joints) {
-            const dd = Math.hypot(px - j.x, py - j.y);
+            const dd = Math.hypot(wx - j.x, wy - j.y);
             if (dd < 0.03) v = Math.max(v, 1);
           }
           // floor line, fading out toward both edges
-          const fd = Math.abs(py - (FLOOR + 0.008));
+          const fd = Math.abs(wy - (FLOOR + 0.008));
           if (fd < 0.007) {
-            const u = (px - 0.5) / aspect + 0.5; // 0 at canvas left, 1 at right
             const edge = Math.min(u / 0.24, (1 - u) / 0.24, 1);
             if (edge > 0) {
               const f = edge * edge * (3 - 2 * edge);
@@ -122,7 +124,7 @@ export function AsciiRobotArm({ className = "" }: { className?: string }) {
             }
           }
           // soft glow pooling under the base
-          const gd = Math.hypot(px - 0.5, (py - (FLOOR + 0.035)) * 2.4);
+          const gd = Math.hypot(wx - 0.5, (wy - (FLOOR + 0.035)) * 2.4);
           if (gd < 0.17) v = Math.max(v, (1 - gd / 0.17) * 0.3);
           if (v <= 0.02) continue;
           ctx.fillStyle = `hsl(${color} / ${0.35 + v * 0.65})`;
