@@ -82,7 +82,6 @@ export default function Home() {
             “ Robots shouldn't just follow instructions — they should learn, adapt and act precisely in the real world. ”
           </p>
         </div>
-        <AsciiRobotArm className="pointer-events-none absolute bottom-[calc(2.5rem-3.6vh)] right-[-6vw] h-[45vh] w-full md:bottom-[calc(2.5rem-5vh)] md:right-[-4vw] md:h-[62vh] md:w-[48vw] opacity-90" />
         <div className="container relative">
           <p className="font-display text-base leading-tight text-primary md:text-2xl">
             AI × Robotics
@@ -150,19 +149,22 @@ export default function Home() {
           </div>
         </Section>
 
-        <section className="border-t border-border py-16 md:py-24">
-          <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
-            Thanks
-            <br />
-            for being
-            <br />
-            here
-          </h2>
-          <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
-            Solving robotics,
-            <br />
-            one inference layer at a time
-          </Link>
+        <section className="relative overflow-hidden border-t border-border pb-[38vh] pt-16 md:pb-[46vh] md:pt-24">
+          <AsciiRobotArm className="pointer-events-none absolute bottom-0 right-[-6vw] h-[38vh] w-full md:right-[-4vw] md:h-[46vh] md:w-[46vw] opacity-90" />
+          <div className="relative z-10">
+            <h2 className="retro-text font-display text-[11vw] uppercase leading-[0.85] tracking-tighter md:text-[8vw]">
+              Thanks
+              <br />
+              for being
+              <br />
+              here
+            </h2>
+            <Link to="/contact" className="mt-6 inline-block font-display text-lg leading-tight text-primary hover:opacity-80 md:mt-8 md:text-2xl">
+              Solving robotics,
+              <br />
+              one inference layer at a time
+            </Link>
+          </div>
         </section>
 
         <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
