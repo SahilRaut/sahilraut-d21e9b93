@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
 import { TechTag } from "@/components/ui/TechTag";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { projectsBySlug as projectsData } from "@/data/projects";
@@ -111,10 +111,6 @@ export default function ProjectDetail() {
             >
               <Github className="mr-2 h-4 w-4" />
               View Code
-            </Button>
-            <Button variant="outline" className="font-mono" disabled>
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
             </Button>
           </div>
         </div>
