@@ -103,7 +103,12 @@ export default function ProjectDetail() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-8 border-t border-border opacity-0 animate-fade-in-up stagger-4">
-            <Button variant="outline" className="font-mono" disabled>
+            <Button
+              variant="outline"
+              className="font-mono"
+              disabled={!project.repoUrl}
+              onClick={() => project.repoUrl && window.open(project.repoUrl, "_blank", "noopener,noreferrer")}
+            >
               <Github className="mr-2 h-4 w-4" />
               View Code
             </Button>
