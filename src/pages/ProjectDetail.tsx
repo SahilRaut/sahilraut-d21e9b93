@@ -6,7 +6,6 @@ import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { projectsBySlug as projectsData } from "@/data/projects";
-import trashSortingSetup from "@/assets/trash-sorting-setup.jpg.asset.json";
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
