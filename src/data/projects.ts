@@ -1,4 +1,4 @@
-import trashSortingSetup from "@/assets/trash-sorting-setup.jpg.asset.json";
+import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
 
 export type Project = {
   name: string;
