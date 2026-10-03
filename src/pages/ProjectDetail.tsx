@@ -112,10 +112,6 @@ export default function ProjectDetail() {
               <Github className="mr-2 h-4 w-4" />
               View Code
             </Button>
-            <Button variant="outline" className="font-mono" disabled>
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
           </div>
         </div>
       </section>
