@@ -9,6 +9,8 @@ export type Project = {
   features: string[];
   repoUrl?: string;
   demoUrl?: string;
+  introImage?: string;
+  introImageCaption?: string;
 };
 
 export const projects: Project[] = [
