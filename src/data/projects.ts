@@ -1,3 +1,5 @@
+import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
+
 export type Project = {
   name: string;
   slug: string;
@@ -9,6 +11,8 @@ export type Project = {
   features: string[];
   repoUrl?: string;
   demoUrl?: string;
+  introImage?: string;
+  introImageCaption?: string;
 };
 
 export const projects: Project[] = [
@@ -33,6 +37,8 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Therkelsen/Trash_Sorting_Robot",
     demoUrl: "https://drive.google.com/file/d/1D1oOZA_YDkooNurbry9JvS0sh6EmKS6N/view",
+    introImage: trashSortingSetup,
+    introImageCaption: "The setup at the beginning — ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
   },
   {
     name: "CASTOR Humanoid Replication",
