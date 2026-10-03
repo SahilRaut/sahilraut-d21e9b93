@@ -7,6 +7,7 @@ export type Project = {
   impact: string;
   challenges: string[];
   features: string[];
+  repoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -29,6 +30,7 @@ export const projects: Project[] = [
       "YOLOv8 + Azure Custom Vision classification pipeline",
       "Automated pick-and-place with ABB GoFa cobot",
     ],
+    repoUrl: "https://github.com/Therkelsen/Trash_Sorting_Robot",
   },
   {
     name: "CASTOR Humanoid Replication",
