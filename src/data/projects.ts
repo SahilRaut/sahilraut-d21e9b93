@@ -1,4 +1,6 @@
 import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
+import castorLabSetup from "@/assets/castor-lab-setup.jpg";
+import castorRobotCloseup from "@/assets/castor-robot-closeup.jpg";
 
 export type Project = {
   name: string;
@@ -13,6 +15,7 @@ export type Project = {
   demoUrl?: string;
   introImage?: string;
   introImageCaption?: string;
+  gallery?: { src: string; caption?: string }[];
 };
 
 export const projects: Project[] = [
@@ -58,6 +61,17 @@ export const projects: Project[] = [
       "Face detection with OpenMV H7 Plus camera",
       "Facial expression synchronisation in Python",
       "ChatGPT-driven voice responses",
+    ],
+    repoUrl: "https://github.com/SahilRaut/CASTOR-UK-Build/wiki",
+    introImage: castorLabSetup,
+    introImageCaption:
+      "The lab setup — CASTOR (left), NAO and Pepper at Bristol Robotics Laboratory.",
+    gallery: [
+      {
+        src: castorRobotCloseup,
+        caption:
+          "CASTOR up close — 3D-printed head with OpenMV H7 eye cameras and servo-driven arms.",
+      },
     ],
   },
   {

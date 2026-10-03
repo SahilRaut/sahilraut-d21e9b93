@@ -71,6 +71,27 @@ export default function ProjectDetail() {
               </figure>
             )}
 
+            {/* Additional project photos */}
+            {project.gallery?.map((photo, i) => (
+              <figure
+                key={i}
+                className="mb-6 overflow-hidden rounded-lg border border-border bg-card"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.caption || `${project.name} — photo ${i + 2}`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                {photo.caption && (
+                  <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground border-t border-border">
+                    <span className="text-primary">{"//"}</span> {photo.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+
+
             
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-2 mb-6">
@@ -130,15 +151,16 @@ export default function ProjectDetail() {
               <Github className="mr-2 h-4 w-4" />
               View Code
             </Button>
-            <Button
-              variant="outline"
-              className="font-mono"
-              disabled={!project.demoUrl}
-              onClick={() => project.demoUrl && window.open(project.demoUrl, "_blank", "noopener,noreferrer")}
-            >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Button>
+            {project.demoUrl && (
+              <Button
+                variant="outline"
+                className="font-mono"
+                onClick={() => project.demoUrl && window.open(project.demoUrl, "_blank", "noopener,noreferrer")}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Live Demo
+              </Button>
+            )}
           </div>
         </div>
       </section>
