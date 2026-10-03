@@ -24,7 +24,7 @@ export const projects: Project[] = [
     fullDescription:
       "Built at the SICK Solution Hackathon 2023 in Germany. We automated trash sorting by combining SICK Visionary-S 3D stereo depth cameras, a YOLOv8-based classification network, Azure Custom Image Classifier and an ABB GoFa CRB 15000 cobot to pick and categorise diverse waste types.",
     stack: ["YOLOv8", "SICK Visionary-S", "Azure Custom Vision", "ABB GoFa", "Python"],
-    impact: "Reduced manual labour with faster, more precise waste categorisation",
+    impact: "Kept workers away from toxic waste — the cobot took over hazardous manual sorting",
     challenges: [
       "Classifying visually similar waste types reliably in real time",
       "Fusing 3D depth data with 2D classification for accurate grasp points",
