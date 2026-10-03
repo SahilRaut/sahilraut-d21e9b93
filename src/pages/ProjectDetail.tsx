@@ -71,6 +71,27 @@ export default function ProjectDetail() {
               </figure>
             )}
 
+            {/* Additional project photos */}
+            {project.gallery?.map((photo, i) => (
+              <figure
+                key={i}
+                className="mb-6 overflow-hidden rounded-lg border border-border bg-card"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.caption || `${project.name} — photo ${i + 2}`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                {photo.caption && (
+                  <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground border-t border-border">
+                    <span className="text-primary">{"//"}</span> {photo.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+
+
             
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-2 mb-6">
