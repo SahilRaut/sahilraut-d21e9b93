@@ -54,6 +54,24 @@ export default function ProjectDetail() {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {project.fullDescription}
             </p>
+
+            {/* Intro photo — how the project looked at the start */}
+            {project.introImage && (
+              <figure className="mb-6 overflow-hidden rounded-lg border border-border bg-card">
+                <img
+                  src={project.introImage}
+                  alt={`${project.name} — setup at the beginning`}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+                {project.introImageCaption && (
+                  <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground border-t border-border">
+                    <span className="text-primary">{"//"}</span> {project.introImageCaption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+
             
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-2 mb-6">
