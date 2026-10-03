@@ -8,6 +8,7 @@ export type Project = {
   challenges: string[];
   features: string[];
   repoUrl?: string;
+  demoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -31,6 +32,7 @@ export const projects: Project[] = [
       "Automated pick-and-place with ABB GoFa cobot",
     ],
     repoUrl: "https://github.com/Therkelsen/Trash_Sorting_Robot",
+    demoUrl: "https://drive.google.com/file/d/1D1oOZA_YDkooNurbry9JvS0sh6EmKS6N/view",
   },
   {
     name: "CASTOR Humanoid Replication",
