@@ -122,6 +122,7 @@ export const projects: Project[] = [
       "Emergency stop and manual control mode",
       "Precise movement algorithms",
     ],
+    previewImage: previewRoboticArm,
   },
   {
     name: "Micromouse",
