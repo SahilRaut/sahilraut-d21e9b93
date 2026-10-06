@@ -96,11 +96,12 @@ export const projects: Project[] = [
       "Working within NAO hardware and Choregraphe constraints",
       "Keeping LLM-generated stories responsive in real time",
     ],
-    features: [
-      "Voice-driven interactive storytelling",
-      "LLM-generated adventure narratives",
-      "Expressive robot behaviours via Choregraphe",
-    ],
+     features: [
+       "Voice-driven interactive storytelling",
+       "LLM-generated adventure narratives",
+       "Expressive robot behaviours via Choregraphe",
+     ],
+    previewImage: previewNaoAdventure,
   },
   {
     name: "Robotic Arm Automation & Control",
