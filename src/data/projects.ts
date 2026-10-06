@@ -44,6 +44,7 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Therkelsen/Trash_Sorting_Robot",
     demoUrl: "https://drive.google.com/file/d/1D1oOZA_YDkooNurbry9JvS0sh6EmKS6N/view",
+    previewImage: trashSortingSetup,
     introImage: trashSortingSetup,
     introImageCaption: "The setup at the beginning — ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
   },
