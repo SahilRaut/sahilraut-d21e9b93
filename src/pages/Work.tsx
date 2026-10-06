@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
