@@ -1,6 +1,9 @@
 import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
-import castorLabSetup from "@/assets/castor-lab-setup.jpg";
 import castorRobotCloseup from "@/assets/castor-robot-closeup.jpg";
+import castorKeyResults from "@/assets/castor-key-results.jpg";
+import previewNaoAdventure from "@/assets/preview-nao-adventure.jpg";
+import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
+import previewMicromouse from "@/assets/preview-micromouse.jpg";
 
 export type Project = {
   name: string;
@@ -13,6 +16,7 @@ export type Project = {
   features: string[];
   repoUrl?: string;
   demoUrl?: string;
+  previewImage?: string;
   introImage?: string;
   introImageCaption?: string;
   gallery?: { src: string; caption?: string }[];
