@@ -143,6 +143,7 @@ export const projects: Project[] = [
       "IR wall sensing",
       "Maze search algorithm",
     ],
+    previewImage: previewMicromouse,
   },
 ];
 
