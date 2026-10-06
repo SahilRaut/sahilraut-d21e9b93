@@ -4,6 +4,7 @@ import { CodeDivider } from "@/components/ui/CodeDivider";
 import { TechTag } from "@/components/ui/TechTag";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 import { projectsBySlug as projectsData } from "@/data/projects";
 
@@ -71,25 +72,29 @@ export default function ProjectDetail() {
               </figure>
             )}
 
-            {/* Additional project photos */}
-            {project.gallery?.map((photo, i) => (
-              <figure
-                key={i}
-                className="mb-6 overflow-hidden rounded-lg border border-border bg-card"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.caption || `${project.name} — photo ${i + 2}`}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-                {photo.caption && (
-                  <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground border-t border-border">
-                    <span className="text-primary">{"//"}</span> {photo.caption}
-                  </figcaption>
-                )}
-              </figure>
-            ))}
+            {/* Additional project photos — side by side when there are two */}
+            {project.gallery && project.gallery.length > 0 && (
+              <div className={cn("mb-6 gap-6", project.gallery.length > 1 ? "grid sm:grid-cols-2" : "grid")}>
+                {project.gallery.map((photo, i) => (
+                  <figure
+                    key={i}
+                    className="overflow-hidden rounded-lg border border-border bg-card flex flex-col"
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.caption || `${project.name} — photo ${i + 2}`}
+                      className="w-full h-56 sm:h-64 object-cover"
+                      loading="lazy"
+                    />
+                    {photo.caption && (
+                      <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground border-t border-border">
+                        <span className="text-primary">{"//"}</span> {photo.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
 
 
             

@@ -1,6 +1,9 @@
 import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
-import castorLabSetup from "@/assets/castor-lab-setup.jpg";
 import castorRobotCloseup from "@/assets/castor-robot-closeup.jpg";
+import castorKeyResults from "@/assets/castor-key-results.jpg";
+import previewNaoAdventure from "@/assets/preview-nao-adventure.jpg";
+import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
+import previewMicromouse from "@/assets/preview-micromouse.jpg";
 
 export type Project = {
   name: string;
@@ -13,6 +16,7 @@ export type Project = {
   features: string[];
   repoUrl?: string;
   demoUrl?: string;
+  previewImage?: string;
   introImage?: string;
   introImageCaption?: string;
   gallery?: { src: string; caption?: string }[];
@@ -40,6 +44,7 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Therkelsen/Trash_Sorting_Robot",
     demoUrl: "https://drive.google.com/file/d/1D1oOZA_YDkooNurbry9JvS0sh6EmKS6N/view",
+    previewImage: trashSortingSetup,
     introImage: trashSortingSetup,
     introImageCaption: "The setup at the beginning — ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
   },
@@ -63,14 +68,17 @@ export const projects: Project[] = [
       "ChatGPT-driven voice responses",
     ],
     repoUrl: "https://github.com/SahilRaut/CASTOR-UK-Build/wiki",
-    introImage: castorLabSetup,
-    introImageCaption:
-      "The lab setup — CASTOR (left), NAO and Pepper at Bristol Robotics Laboratory.",
+    previewImage: castorRobotCloseup,
     gallery: [
       {
         src: castorRobotCloseup,
         caption:
           "CASTOR up close — 3D-printed head with OpenMV H7 eye cameras and servo-driven arms.",
+      },
+      {
+        src: castorKeyResults,
+        caption:
+          "Key results presentation — walking through the CASTOR UK build at Bristol Robotics Laboratory.",
       },
     ],
   },
@@ -88,11 +96,12 @@ export const projects: Project[] = [
       "Working within NAO hardware and Choregraphe constraints",
       "Keeping LLM-generated stories responsive in real time",
     ],
-    features: [
-      "Voice-driven interactive storytelling",
-      "LLM-generated adventure narratives",
-      "Expressive robot behaviours via Choregraphe",
-    ],
+     features: [
+       "Voice-driven interactive storytelling",
+       "LLM-generated adventure narratives",
+       "Expressive robot behaviours via Choregraphe",
+     ],
+    previewImage: previewNaoAdventure,
   },
   {
     name: "Robotic Arm Automation & Control",
@@ -113,6 +122,7 @@ export const projects: Project[] = [
       "Emergency stop and manual control mode",
       "Precise movement algorithms",
     ],
+    previewImage: previewRoboticArm,
   },
   {
     name: "Micromouse",
@@ -133,6 +143,7 @@ export const projects: Project[] = [
       "IR wall sensing",
       "Maze search algorithm",
     ],
+    previewImage: previewMicromouse,
   },
 ];
 
