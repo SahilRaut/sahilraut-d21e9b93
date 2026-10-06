@@ -68,14 +68,17 @@ export const projects: Project[] = [
       "ChatGPT-driven voice responses",
     ],
     repoUrl: "https://github.com/SahilRaut/CASTOR-UK-Build/wiki",
-    introImage: castorLabSetup,
-    introImageCaption:
-      "The lab setup — CASTOR (left), NAO and Pepper at Bristol Robotics Laboratory.",
+    previewImage: castorRobotCloseup,
     gallery: [
       {
         src: castorRobotCloseup,
         caption:
           "CASTOR up close — 3D-printed head with OpenMV H7 eye cameras and servo-driven arms.",
+      },
+      {
+        src: castorKeyResults,
+        caption:
+          "Key results presentation — walking through the CASTOR UK build at Bristol Robotics Laboratory.",
       },
     ],
   },
