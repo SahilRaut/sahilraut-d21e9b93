@@ -2,20 +2,11 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 
 export default function Work() {
-  const headerCols = [
-    { label: "IDX", className: "w-14 hidden md:flex" },
-    { label: "Preview", className: "w-44 hidden md:flex" },
-    { label: "Project", className: "flex-1" },
-    { label: "Stack", className: "w-56 hidden lg:flex" },
-    { label: "Impact", className: "w-64 hidden xl:flex" },
-    { label: "", className: "w-8 hidden md:flex" },
-  ];
-
   return (
     <Layout>
       <section className="py-20">
@@ -34,99 +25,71 @@ export default function Work() {
             <CodeDivider label="Projects" />
           </div>
 
-          {/* Projects Table */}
-          <div className="opacity-0 animate-fade-in-up stagger-2">
-            {/* Header row */}
-            <div className="hidden md:flex items-center gap-6 px-4 py-3 border border-border border-b-0 rounded-t-lg bg-card/60 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-              {headerCols.map((col) => (
-                <div key={col.label} className={cn(col.className)}>
-                  {col.label}
-                </div>
-              ))}
-            </div>
-
-            {/* Rows */}
-            <div className="md:rounded-b-lg md:overflow-hidden border border-border md:border-t-0">
-              {projects.map((project, index) => (
-                <Link
-                  key={project.slug}
-                  to={`/work/${project.slug}`}
-                  className={cn(
-                    "group flex flex-col md:grid md:grid-cols-[3.5rem_11rem_minmax(0,1.4fr)_minmax(0,0.9fr)_minmax(0,1fr)_2rem] md:items-center gap-4 md:gap-6 p-4 md:px-4 border-b border-border last:border-b-0 transition-colors hover:bg-primary/5",
-                    `opacity-0 animate-fade-in-up stagger-${Math.min(index + 2, 4)}`
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {projects.map((project, index) => (
+              <Link
+                key={project.slug}
+                to={`/work/${project.slug}`}
+                className={cn(
+                  "group flex flex-col overflow-hidden rounded-lg border border-border bg-card/60 transition-colors hover:border-primary/60 hover:bg-primary/5",
+                  `opacity-0 animate-fade-in-up stagger-${Math.min(index + 2, 4)}`
+                )}
+              >
+                {/* Preview */}
+                <div className="relative aspect-video overflow-hidden border-b border-border bg-card">
+                  {project.previewImage ? (
+                    <img
+                      src={project.previewImage}
+                      alt={`${project.name} preview`}
+                      loading="lazy"
+                      width={1024}
+                      height={768}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center font-mono text-xs text-muted-foreground">
+                      [no preview]
+                    </div>
                   )}
-                >
-                  {/* IDX */}
-                  <span className="hidden md:block font-mono text-sm text-primary">
+                  <span className="absolute left-3 top-3 rounded border border-border bg-background/80 px-2 py-0.5 font-mono text-xs text-primary backdrop-blur-sm">
                     /{String(index + 1).padStart(2, "0")}
                   </span>
+                </div>
 
-                  {/* Preview */}
-                  <div className="overflow-hidden rounded border border-border bg-card md:aspect-video shrink-0">
-                    {project.previewImage ? (
-                      <img
-                        src={project.previewImage}
-                        alt={`${project.name} preview`}
-                        loading="lazy"
-                        width={1024}
-                        height={768}
-                        className="h-40 w-full object-cover md:h-full transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-40 w-full items-center justify-center font-mono text-xs text-muted-foreground md:h-full">
-                        [no preview]
-                      </div>
-                    )}
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-mono text-lg font-medium text-foreground transition-colors group-hover:text-primary">
+                      {project.name}
+                    </h3>
+                    <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                   </div>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-2">
+                    {project.description}
+                  </p>
 
-                  {/* Name + description */}
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="md:hidden font-mono text-xs text-primary">/{String(index + 1).padStart(2, "0")}</span>
-                      <h3 className="font-mono text-lg font-medium text-foreground group-hover:text-primary transition-colors truncate">
-                        {project.name}
-                      </h3>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                      {project.description}
-                    </p>
-                    {/* Mobile stack + impact */}
-                    <div className="mt-3 flex flex-wrap gap-2 md:hidden">
-                      {project.stack.slice(0, 3).map((tech) => (
-                        <span key={tech} className="font-mono text-[10px] uppercase tracking-wider border border-border rounded px-2 py-0.5 text-muted-foreground">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="mt-2 font-mono text-xs text-primary md:hidden">
-                      <span className="text-muted-foreground">{"//"}</span> {project.impact}
-                    </p>
-                  </div>
-
-                  {/* Stack (desktop) */}
-                  <div className="hidden lg:flex flex-wrap gap-1.5">
+                  {/* Stack */}
+                  <div className="mt-4 flex flex-wrap gap-1.5">
                     {project.stack.slice(0, 4).map((tech) => (
-                      <span key={tech} className="font-mono text-[10px] uppercase tracking-wider border border-border rounded px-2 py-0.5 text-muted-foreground">
+                      <span key={tech} className="rounded border border-border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                         {tech}
                       </span>
                     ))}
                     {project.stack.length > 4 && (
-                      <span className="font-mono text-[10px] text-muted-foreground/70 px-1 py-0.5">
+                      <span className="px-1 py-0.5 font-mono text-[10px] text-muted-foreground/70">
                         +{project.stack.length - 4}
                       </span>
                     )}
                   </div>
 
-                  {/* Impact (desktop) */}
-                  <p className="hidden xl:block font-mono text-xs text-primary leading-relaxed line-clamp-3">
+                  {/* Impact */}
+                  <p className="mt-auto pt-4 font-mono text-xs leading-relaxed text-primary line-clamp-2">
                     <span className="text-muted-foreground">{"//"}</span> {project.impact}
                   </p>
-
-                  {/* Arrow */}
-                  <ArrowRight className="hidden md:block h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all justify-self-end" />
-                </Link>
-              ))}
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
