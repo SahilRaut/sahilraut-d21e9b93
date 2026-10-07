@@ -14,7 +14,7 @@ interface SitemapEntry {
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/work/automating-trash-sorting", changefreq: "yearly", priority: "0.6" },
-  { path: "/work/castor-humanoid-replication", changefreq: "yearly", priority: "0.6" },
+  { path: "/work/castor-humanoid", changefreq: "yearly", priority: "0.6" },
   { path: "/work/nao-adventure-game", changefreq: "yearly", priority: "0.6" },
   { path: "/work/robotic-arm-automation", changefreq: "yearly", priority: "0.6" },
   { path: "/work/micromouse", changefreq: "yearly", priority: "0.6" },
