@@ -6,6 +6,10 @@ import previewNaoAdventure from "@/assets/nao-preview.jpg";
 import naoAdventure from "@/assets/nao-adventure.jpg";
 import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
 import previewMicromouse from "@/assets/preview-micromouse.jpg";
+import attiny85Hero from "@/assets/attiny85-hero.jpg";
+import attiny85Preview from "@/assets/attiny85-preview.jpg";
+import attiny85Components from "@/assets/attiny85-components.jpg";
+import attiny85Circuit from "@/assets/attiny85-circuit.jpg";
 
 export type Project = {
   name: string;
@@ -151,6 +155,42 @@ export const projects: Project[] = [
       "Maze search algorithm",
     ],
     previewImage: previewMicromouse,
+  },
+  {
+    name: "ATtiny85 Gift Box",
+    slug: "attiny85-gift-box",
+    description:
+      "A compact ATtiny85-powered keychain with a 0.96-inch OLED screen — a token of appreciation for the teachers and technicians who shaped my engineering journey.",
+    fullDescription:
+      "A pocket-sized gift box built around the ATtiny85 microcontroller and a 0.96-inch OLED display, powered by a LiPo battery with a charging IC, push buttons and a keychain ring. I designed and hand-built it as a thank-you gift for the teachers and technicians who contributed to my growth as an engineer during my bachelor's degree.",
+    stack: ["ATtiny85", "Arduino (C/C++)", "OLED Display", "LiPo + Charger IC", "Embedded"],
+    impact: "A hand-built thank-you that put embedded skills into a gift people carry every day",
+    challenges: [
+      "Fitting the firmware and graphics within the ATtiny85's tiny flash and RAM",
+      "Power management on a small LiPo battery with charging circuitry",
+      "Packaging electronics, buttons and screen into a keychain-sized enclosure",
+    ],
+    features: [
+      "0.96-inch OLED screen with custom pixel graphics",
+      "Push-button interaction and power switch",
+      "Rechargeable LiPo battery in a keychain form factor",
+    ],
+    repoUrl: "https://github.com/SahilRaut/ATtiny85-Gift-Box",
+    demoUrl: "https://lnkd.in/ex3HKWvR",
+    previewImage: attiny85Preview,
+    introImage: attiny85Hero,
+    introImageCaption:
+      "The finished ATtiny85 Gift Box — OLED screen, buttons and keychain ring in a compact enclosure.",
+    gallery: [
+      {
+        src: attiny85Components,
+        caption: "All the components — ATtiny85, OLED screen, LiPo battery, charger IC, buttons and keychain ring.",
+      },
+      {
+        src: attiny85Circuit,
+        caption: "The circuit diagram wiring the ATtiny85 to the display, buttons and battery.",
+      },
+    ],
   },
 ];
 
