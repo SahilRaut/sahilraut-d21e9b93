@@ -63,7 +63,7 @@ export default function ProjectDetail() {
                   alt={`${project.name} — setup at the beginning`}
                   className={cn(
                     "w-full h-auto object-cover",
-                    project.introImage.endsWith(".gif") && "mx-auto max-w-md"
+                    /\.gif($|\?)/.test(project.introImage) && "mx-auto max-w-md"
                   )}
                   loading="lazy"
                 />
