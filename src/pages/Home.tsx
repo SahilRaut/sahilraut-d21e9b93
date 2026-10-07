@@ -162,15 +162,15 @@ export default function Home() {
         </Section>
 
         <Section index="04" title="Skills">
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
-            {skills.map(({ name, Icon }) => (
+          <div className="flex flex-wrap gap-2">
+            {skills.map(({ name, Icon, color }) => (
               <div
                 key={name}
                 title={name}
-                className="group flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card/60 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_18px_hsl(var(--primary)/0.35)]"
+                className="group flex items-center gap-1.5 rounded-full border border-border bg-card/60 px-3 py-1.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_14px_hsl(var(--primary)/0.3)]"
               >
-                <Icon className="h-7 w-7 text-foreground/70 transition-colors group-hover:text-primary sm:h-8 sm:w-8" />
-                <span className="text-center font-mono text-[10px] leading-tight text-muted-foreground group-hover:text-foreground">{name}</span>
+                <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
+                <span className="font-mono text-[11px] leading-none text-muted-foreground group-hover:text-foreground">{name}</span>
               </div>
             ))}
           </div>
