@@ -59,12 +59,12 @@ export const projects: Project[] = [
     introImageCaption: "The setup at the beginning — ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
   },
   {
-    name: "CASTOR Humanoid Replication",
-    slug: "castor-humanoid-replication",
+    name: "CASTOR Humanoid Robot",
+    slug: "castor-humanoid",
     description:
-      "Led the replication of the CASTOR HRI humanoid at Bristol Robotics Lab — hardware assembly, face detection and ChatGPT-powered voice feedback.",
+      "Led the build of the CASTOR HRI humanoid at Bristol Robotics Lab — hardware assembly, face detection and ChatGPT-powered voice feedback.",
     fullDescription:
-      "At Bristol Robotics Laboratory I led the replication of CASTOR, a human-robot interaction humanoid. Work covered hardware assembly, software configuration, face detection with an OpenMV H7 Plus camera, facial-expression synchronisation scripts, ChatGPT API voice feedback, and migrating the system onto a Raspberry Pi 4 + Jetson Nano working together.",
+      "At Bristol Robotics Laboratory I led the build of CASTOR, a human-robot interaction humanoid. Work covered hardware assembly, software configuration, face detection with an OpenMV H7 Plus camera, facial-expression synchronisation scripts, ChatGPT API voice feedback, and migrating the system onto a Raspberry Pi 4 + Jetson Nano working together.",
     stack: ["ROS", "Python", "OpenMV H7", "Jetson Nano", "Raspberry Pi", "ChatGPT API"],
     impact: "More engaging human-robot interaction with distributed compute",
     challenges: [
