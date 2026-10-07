@@ -4,7 +4,7 @@ import castorPreview from "@/assets/castor-preview.jpg";
 import castorKeyResults from "@/assets/castor-key-results.jpg";
 import previewNaoAdventure from "@/assets/nao-preview.jpg";
 import naoAdventure from "@/assets/nao-adventure.jpg";
-import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
+import previewRoboticArm from "@/assets/robotic-arm-preview.jpg";
 import previewMicromouse from "@/assets/micromouse-preview.jpg";
 import micromouseCad from "@/assets/micromouse-cad.jpg";
 import micromousePcbs from "@/assets/micromouse-pcbs.jpg";
@@ -138,6 +138,8 @@ export const projects: Project[] = [
       "Precise movement algorithms",
     ],
     previewImage: previewRoboticArm,
+    repoUrl: "https://github.com/SahilRaut/Handling-Test-tube",
+    demoUrl: "https://www.youtube.com/watch?v=iW0zDSGd59A",
   },
   {
     name: "Micromouse",
