@@ -83,7 +83,7 @@ export default function ProjectDetail() {
                     <img
                       src={photo.src}
                       alt={photo.caption || `${project.name} — photo ${i + 2}`}
-                      className="w-full h-56 sm:h-64 object-cover"
+                      className="w-full h-56 sm:h-64 object-contain bg-card"
                       loading="lazy"
                     />
                     {photo.caption && (
