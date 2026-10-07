@@ -22,6 +22,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Navigate to="/#projects" replace />} />
+          <Route
+            path="/work/castor-humanoid-replication"
+            element={<Navigate to="/work/castor-humanoid" replace />}
+          />
           <Route path="/work/:slug" element={<ProjectDetail />} />
           <Route path="/about" element={<Navigate to="/" replace />} />
           <Route path="/styleguide" element={<Styleguide />} />

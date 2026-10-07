@@ -4,5 +4,6 @@
 - [x] SEO review — social share image + sitemap added; live after next publish
 - [x] Remove Connect section from Contact page
 - [x] Keep thumbnails on the homepage and remove the duplicate project listing, including navigation and legacy links.
-
-- [ ] Add a Download CV button (CV PDF from user upload)
+- [x] Add a Download CV button (CV PDF from user upload)
+- [x] Drop "replication" wording from the CASTOR project everywhere (name, slug, copy, sitemap, legacy redirect)
+- [ ] Push and deploy the latest changes to GitHub Pages
