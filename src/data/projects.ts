@@ -10,6 +10,7 @@ import micromouseCad from "@/assets/micromouse-cad.jpg";
 import micromousePcbs from "@/assets/micromouse-pcbs.jpg";
 import micromouseRobot from "@/assets/micromouse-robot.jpg";
 import attiny85Hero from "@/assets/attiny85-hero.jpg";
+import attiny85Demo from "@/assets/attiny85-demo.gif";
 import attiny85Preview from "@/assets/attiny85-preview.jpg";
 import attiny85Components from "@/assets/attiny85-components.jpg";
 import attiny85Circuit from "@/assets/attiny85-circuit.jpg";
@@ -187,10 +188,14 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/SahilRaut/ATtiny85-Gift-Box",
     demoUrl: "https://lnkd.in/ex3HKWvR",
     previewImage: attiny85Preview,
-    introImage: attiny85Hero,
+    introImage: attiny85Demo,
     introImageCaption:
-      "The finished ATtiny85 Gift Box — OLED screen, buttons and keychain ring in a compact enclosure.",
+      "The Gift Box in action — scrolling its thank-you message on the OLED screen.",
     gallery: [
+      {
+        src: attiny85Hero,
+        caption: "The finished ATtiny85 Gift Box — OLED screen, buttons and keychain ring in a compact enclosure.",
+      },
       {
         src: attiny85Components,
         caption: "All the components — ATtiny85, OLED screen, LiPo battery, charger IC, buttons and keychain ring.",
