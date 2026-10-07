@@ -65,9 +65,6 @@ export default function Home() {
             </span>
           </a>
           <nav className="flex items-center gap-5 md:gap-8">
-            <a href="#projects" className="inline-block">
-              <span className="retro-text text-xs md:text-sm">Projects</span>
-            </a>
             <Link to="/contact" className="inline-block">
               <span className="retro-text text-xs md:text-sm">Contact me</span>
             </Link>
