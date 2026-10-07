@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "ChatGPT-driven voice responses",
     ],
     repoUrl: "https://github.com/SahilRaut/CASTOR-UK-Build/wiki",
-    previewImage: castorRobotCloseup,
+    previewImage: castorPreview,
     gallery: [
       {
         src: castorRobotCloseup,
