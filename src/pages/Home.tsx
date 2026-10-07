@@ -1,6 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import {
+  SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
+  SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
+} from "react-icons/si";
 import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryField } from "@/components/lab/BinaryField";
@@ -30,11 +34,36 @@ const experience = [
   },
 ];
 
-const skills = [
-  "Python", "C/C++", "ROS1/2", "MoveIt", "Gazebo", "Kubernetes", "MATLAB",
-  "Deep Learning", "Robotic Manipulation", "Computer Vision", "Visual SLAM",
-  "LiDAR", "Robot Control", "YOLOv8", "Fusion360", "SolidWorks", "PCB Prototyping",
-  "VHDL", "Arduino", "Git", "Team Leadership",
+const skills: { name: string; Icon: ComponentType<{ className?: string }> }[] = [
+  { name: "Python", Icon: SiPython },
+  { name: "C/C++", Icon: SiCplusplus },
+  { name: "ROS1/2", Icon: SiRos },
+  { name: "MoveIt", Icon: Move3d },
+  { name: "Gazebo", Icon: Box },
+  { name: "Kubernetes", Icon: SiKubernetes },
+  { name: "Docker", Icon: SiDocker },
+  { name: "Linux", Icon: SiLinux },
+  { name: "MATLAB", Icon: Sigma },
+  { name: "PyTorch", Icon: SiPytorch },
+  { name: "TensorFlow", Icon: SiTensorflow },
+  { name: "NumPy", Icon: SiNumpy },
+  { name: "Deep Learning", Icon: Brain },
+  { name: "OpenCV", Icon: SiOpencv },
+  { name: "Computer Vision", Icon: Eye },
+  { name: "YOLOv8", Icon: ScanSearch },
+  { name: "Visual SLAM", Icon: MapIcon },
+  { name: "LiDAR", Icon: Radar },
+  { name: "NVIDIA / CUDA", Icon: SiNvidia },
+  { name: "Manipulation", Icon: Hand },
+  { name: "Robot Control", Icon: Gauge },
+  { name: "Fusion360", Icon: SiAutodesk },
+  { name: "SolidWorks", Icon: SiDassaultsystemes },
+  { name: "PCB / KiCad", Icon: SiKicad },
+  { name: "VHDL", Icon: Cpu },
+  { name: "Arduino", Icon: SiArduino },
+  { name: "Raspberry Pi", Icon: SiRaspberrypi },
+  { name: "Git", Icon: SiGit },
+  { name: "Leadership", Icon: Users },
 ];
 
 function Section({ index, title, children, id }: { index: string; title: string; children: ReactNode; id?: string }) {
@@ -133,11 +162,16 @@ export default function Home() {
         </Section>
 
         <Section index="04" title="Skills">
-          <div className="flex flex-wrap gap-2">
-            {skills.map((s) => (
-              <span key={s} className="rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs text-foreground/90 backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-card/80 hover:text-foreground">
-                {s}
-              </span>
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
+            {skills.map(({ name, Icon }) => (
+              <div
+                key={name}
+                title={name}
+                className="group flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card/60 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_18px_hsl(var(--primary)/0.35)]"
+              >
+                <Icon className="h-7 w-7 text-foreground/70 transition-colors group-hover:text-primary sm:h-8 sm:w-8" />
+                <span className="text-center font-mono text-[10px] leading-tight text-muted-foreground group-hover:text-foreground">{name}</span>
+              </div>
             ))}
           </div>
         </Section>
