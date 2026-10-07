@@ -62,8 +62,8 @@ export default function ProjectDetail() {
                   src={project.introImage}
                   alt={`${project.name} — setup at the beginning`}
                   className={cn(
-                    "w-full h-auto object-cover",
-                    /\.gif($|\?)/.test(project.introImage) && "mx-auto h-56 sm:h-64 w-auto object-contain"
+                    "w-full h-56 sm:h-64 object-contain bg-card",
+                    !/\.gif($|\?)/.test(project.introImage) && "object-cover h-auto"
                   )}
                   loading="lazy"
                 />
