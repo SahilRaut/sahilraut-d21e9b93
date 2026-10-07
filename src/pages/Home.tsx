@@ -93,14 +93,15 @@ export default function Home() {
               />
             </span>
           </a>
-          <nav className="flex items-center gap-4 md:gap-8">
+          <nav className="flex items-center gap-5 md:gap-8">
             <a
               href="/cv/Sahil-Raut-CV.pdf"
               download
-              className="inline-flex items-center gap-1.5 md:gap-2"
+              aria-label="Download CV"
+              className="inline-flex items-center gap-2"
             >
-              <Download className="h-3 w-3 shrink-0 text-primary md:h-3.5 md:w-3.5" />
-              <span className="retro-text text-xs md:text-sm">Download CV</span>
+              <Download className="h-4 w-4 shrink-0 text-primary md:h-3.5 md:w-3.5" />
+              <span className="retro-text hidden text-xs md:inline md:text-sm">Download CV</span>
             </a>
             <Link to="/contact" className="inline-block">
               <span className="retro-text text-xs md:text-sm">Contact me</span>
