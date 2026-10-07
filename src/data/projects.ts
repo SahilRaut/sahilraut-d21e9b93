@@ -2,6 +2,7 @@ import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
 import castorRobotCloseup from "@/assets/castor-robot-closeup.jpg";
 import castorKeyResults from "@/assets/castor-key-results.jpg";
 import previewNaoAdventure from "@/assets/preview-nao-adventure.jpg";
+import naoAdventure from "@/assets/nao-adventure.jpg";
 import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
 import previewMicromouse from "@/assets/preview-micromouse.jpg";
 
@@ -102,6 +103,11 @@ export const projects: Project[] = [
        "Expressive robot behaviours via Choregraphe",
      ],
     previewImage: previewNaoAdventure,
+    repoUrl: "https://github.com/SahilRaut/NaoRobot_HRI",
+    demoUrl: "https://www.youtube.com/watch?v=zuJG3WEgxY8",
+    introImage: naoAdventure,
+    introImageCaption:
+      "The NAO robot running the adventure game — Choregraphe behaviour flow and Python script on screen",
   },
   {
     name: "Robotic Arm Automation & Control",
