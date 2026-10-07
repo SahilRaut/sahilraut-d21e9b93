@@ -188,10 +188,11 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/SahilRaut/ATtiny85-Gift-Box",
     demoUrl: "https://lnkd.in/ex3HKWvR",
     previewImage: attiny85Preview,
-    introImage: attiny85Demo,
-    introImageCaption:
-      "The Gift Box in action — scrolling its thank-you message on the OLED screen.",
     gallery: [
+      {
+        src: attiny85Demo,
+        caption: "The Gift Box in action — scrolling its thank-you message on the OLED screen.",
+      },
       {
         src: attiny85Hero,
         caption: "The finished ATtiny85 Gift Box — OLED screen, buttons and keychain ring in a compact enclosure.",
