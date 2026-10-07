@@ -34,8 +34,8 @@ const experience = [
   },
 ];
 
-const skills: { name: string; Icon: ComponentType<{ className?: string }> }[] = [
-  { name: "Python", Icon: SiPython },
+const skills: { name: string; Icon: ComponentType<{ className?: string; style?: React.CSSProperties }>; color?: string }[] = [
+  { name: "Python", Icon: SiPython, color: "#3776AB" },
   { name: "C/C++", Icon: SiCplusplus },
   { name: "ROS1/2", Icon: SiRos },
   { name: "MoveIt", Icon: Move3d },
