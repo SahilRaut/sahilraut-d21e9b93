@@ -37,9 +37,9 @@ const skills = [
   "VHDL", "Arduino", "Git", "Team Leadership",
 ];
 
-function Section({ index, title, children }: { index: string; title: string; children: ReactNode }) {
+function Section({ index, title, children, id }: { index: string; title: string; children: ReactNode; id?: string }) {
   return (
-    <section className="grid gap-6 border-t border-border py-12 md:grid-cols-2 md:gap-8 md:py-24">
+    <section id={id} className="grid scroll-mt-20 gap-6 border-t border-border py-12 md:grid-cols-2 md:gap-8 md:py-24">
       <h2 className="font-display text-xl uppercase tracking-tight min-w-0 md:sticky md:top-24 md:self-start">
         <span className="text-primary">{index}.</span> {title}
       </h2>
@@ -65,9 +65,9 @@ export default function Home() {
             </span>
           </a>
           <nav className="flex items-center gap-5 md:gap-8">
-            <Link to="/work" className="inline-block">
+            <a href="#projects" className="inline-block">
               <span className="retro-text text-xs md:text-sm">Projects</span>
-            </Link>
+            </a>
             <Link to="/contact" className="inline-block">
               <span className="retro-text text-xs md:text-sm">Contact me</span>
             </Link>
@@ -112,13 +112,18 @@ export default function Home() {
           ))}
         </Section>
 
-        <Section index="03" title="Projects">
+        <Section index="03" title="Projects" id="projects">
           {projects.map((p) => (
             <Link
               key={p.slug}
               to={`/work/${p.slug}`}
-              className="group block rounded-lg border border-border bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
+              className="group block overflow-hidden rounded-lg border border-border bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
             >
+              {p.previewImage && (
+                <div className="aspect-video overflow-hidden border-b border-border bg-card">
+                  <img src={p.previewImage} alt={`${p.name} preview`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 motion-safe:group-hover:scale-105" />
+                </div>
+              )}
               <div className="flex items-start justify-between gap-4 px-6 pt-5">
                 <h3 className="min-w-0 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                   <BinaryGlitchText text={p.name} speed={25} hold={2} />

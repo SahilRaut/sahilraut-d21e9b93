@@ -6,11 +6,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sahilraut.lovable.app/work</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://sahilraut.lovable.app/work/automating-trash-sorting</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

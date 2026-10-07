@@ -13,7 +13,7 @@ import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Projects" },
+  { href: "/#projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ];
 

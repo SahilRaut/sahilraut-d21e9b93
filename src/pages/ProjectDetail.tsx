@@ -21,7 +21,7 @@ export default function ProjectDetail() {
               <h1 className="retro-text font-display text-5xl uppercase tracking-tighter mb-6 pr-2">Project Not Found</h1>
               <p className="text-muted-foreground mb-8">The project you're looking for doesn't exist.</p>
               <Button asChild>
-                <Link to="/work">
+                <Link to="/#projects">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Projects
                 </Link>
@@ -39,7 +39,7 @@ export default function ProjectDetail() {
         <div className="container max-w-4xl">
           {/* Back Link */}
           <Link 
-            to="/work" 
+            to="/#projects" 
             className="inline-flex items-center font-mono text-sm text-muted-foreground hover:text-primary transition-colors mb-8 opacity-0 animate-fade-in-up"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
