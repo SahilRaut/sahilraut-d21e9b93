@@ -34,36 +34,36 @@ const experience = [
   },
 ];
 
-const skills: { name: string; Icon: ComponentType<{ className?: string }> }[] = [
-  { name: "Python", Icon: SiPython },
-  { name: "C/C++", Icon: SiCplusplus },
-  { name: "ROS1/2", Icon: SiRos },
-  { name: "MoveIt", Icon: Move3d },
-  { name: "Gazebo", Icon: Box },
-  { name: "Kubernetes", Icon: SiKubernetes },
-  { name: "Docker", Icon: SiDocker },
-  { name: "Linux", Icon: SiLinux },
-  { name: "MATLAB", Icon: Sigma },
-  { name: "PyTorch", Icon: SiPytorch },
-  { name: "TensorFlow", Icon: SiTensorflow },
-  { name: "NumPy", Icon: SiNumpy },
-  { name: "Deep Learning", Icon: Brain },
-  { name: "OpenCV", Icon: SiOpencv },
-  { name: "Computer Vision", Icon: Eye },
-  { name: "YOLOv8", Icon: ScanSearch },
-  { name: "Visual SLAM", Icon: MapIcon },
-  { name: "LiDAR", Icon: Radar },
-  { name: "NVIDIA / CUDA", Icon: SiNvidia },
-  { name: "Manipulation", Icon: Hand },
-  { name: "Robot Control", Icon: Gauge },
-  { name: "Fusion360", Icon: SiAutodesk },
-  { name: "SolidWorks", Icon: SiDassaultsystemes },
-  { name: "PCB / KiCad", Icon: SiKicad },
-  { name: "VHDL", Icon: Cpu },
-  { name: "Arduino", Icon: SiArduino },
-  { name: "Raspberry Pi", Icon: SiRaspberrypi },
-  { name: "Git", Icon: SiGit },
-  { name: "Leadership", Icon: Users },
+const skills: { name: string; Icon: ComponentType<{ className?: string; style?: React.CSSProperties }>; color?: string }[] = [
+  { name: "Python", Icon: SiPython, color: "#3776AB" },
+  { name: "C/C++", Icon: SiCplusplus, color: "#00599C" },
+  { name: "ROS1/2", Icon: SiRos, color: "#9DB4D0" },
+  { name: "MoveIt", Icon: Move3d, color: "#E8600A" },
+  { name: "Gazebo", Icon: Box, color: "#F58113" },
+  { name: "Kubernetes", Icon: SiKubernetes, color: "#326CE5" },
+  { name: "Docker", Icon: SiDocker, color: "#2496ED" },
+  { name: "Linux", Icon: SiLinux, color: "#FCC624" },
+  { name: "MATLAB", Icon: Sigma, color: "#E16737" },
+  { name: "PyTorch", Icon: SiPytorch, color: "#EE4C2C" },
+  { name: "TensorFlow", Icon: SiTensorflow, color: "#FF6F00" },
+  { name: "NumPy", Icon: SiNumpy, color: "#4DABCF" },
+  { name: "Deep Learning", Icon: Brain, color: "#B45AF2" },
+  { name: "OpenCV", Icon: SiOpencv, color: "#5C3EE8" },
+  { name: "Computer Vision", Icon: Eye, color: "#38BDF8" },
+  { name: "YOLOv8", Icon: ScanSearch, color: "#8A9BFF" },
+  { name: "Visual SLAM", Icon: MapIcon, color: "#34D399" },
+  { name: "LiDAR", Icon: Radar, color: "#F43F5E" },
+  { name: "NVIDIA / CUDA", Icon: SiNvidia, color: "#76B900" },
+  { name: "Manipulation", Icon: Hand, color: "#FBBF24" },
+  { name: "Robot Control", Icon: Gauge, color: "#22D3EE" },
+  { name: "Fusion360", Icon: SiAutodesk, color: "#0696D7" },
+  { name: "SolidWorks", Icon: SiDassaultsystemes, color: "#E11D48" },
+  { name: "PCB / KiCad", Icon: SiKicad, color: "#314CB0" },
+  { name: "VHDL", Icon: Cpu, color: "#A78BFA" },
+  { name: "Arduino", Icon: SiArduino, color: "#00878F" },
+  { name: "Raspberry Pi", Icon: SiRaspberrypi, color: "#A22846" },
+  { name: "Git", Icon: SiGit, color: "#F05032" },
+  { name: "Leadership", Icon: Users, color: "#F97316" },
 ];
 
 function Section({ index, title, children, id }: { index: string; title: string; children: ReactNode; id?: string }) {
@@ -162,15 +162,15 @@ export default function Home() {
         </Section>
 
         <Section index="04" title="Skills">
-          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
-            {skills.map(({ name, Icon }) => (
+          <div className="flex flex-wrap gap-2">
+            {skills.map(({ name, Icon, color }) => (
               <div
                 key={name}
                 title={name}
-                className="group flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-card/60 p-2 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_18px_hsl(var(--primary)/0.35)]"
+                className="group flex items-center gap-1.5 rounded-full border border-border bg-card/60 px-3 py-1.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_14px_hsl(var(--primary)/0.3)]"
               >
-                <Icon className="h-7 w-7 text-foreground/70 transition-colors group-hover:text-primary sm:h-8 sm:w-8" />
-                <span className="text-center font-mono text-[10px] leading-tight text-muted-foreground group-hover:text-foreground">{name}</span>
+                <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
+                <span className="font-mono text-[11px] leading-none text-muted-foreground group-hover:text-foreground">{name}</span>
               </div>
             ))}
           </div>
