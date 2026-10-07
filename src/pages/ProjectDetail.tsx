@@ -57,13 +57,13 @@ export default function ProjectDetail() {
 
             {/* Intro photo — how the project looked at the start */}
             {project.introImage && (
-              <figure className="mb-6 overflow-hidden rounded-lg border border-border bg-card">
+              <figure className="mb-6 overflow-hidden rounded-lg border border-border bg-card flex flex-col">
                 <img
                   src={project.introImage}
                   alt={`${project.name} — setup at the beginning`}
                   className={cn(
                     "w-full h-auto object-cover",
-                    /\.gif($|\?)/.test(project.introImage) && "mx-auto max-w-md"
+                    /\.gif($|\?)/.test(project.introImage) && "mx-auto h-56 sm:h-64 w-auto object-contain"
                   )}
                   loading="lazy"
                 />
