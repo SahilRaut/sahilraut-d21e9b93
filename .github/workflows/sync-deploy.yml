@@ -1,0 +1,69 @@
+name: Sync from Lovable and Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      since_sha:
+        description: "Wait until the Lovable repo moves past this commit"
+        required: false
+        default: ""
+      wait_minutes:
+        description: "How long to wait for the Lovable sync (minutes)"
+        required: false
+        default: "15"
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for the Lovable sync to land
+        env:
+          SINCE: ${{ inputs.since_sha }}
+          WAIT: ${{ inputs.wait_minutes }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$SINCE" ]; then echo "no since_sha given, syncing whatever is there"; exit 0; fi
+          deadline=$(( $(date +%s) + WAIT * 60 ))
+          while [ "$(date +%s)" -lt "$deadline" ]; do
+            head=$(gh api repos/SahilRaut/sahilraut-d21e9b93/git/ref/heads/main --jq .object.sha)
+            echo "lovable head: $head"
+            if [ -n "$head" ] && [ "$head" != "$SINCE" ]; then echo "sync landed"; exit 0; fi
+            sleep 15
+          done
+          echo "timed out waiting for the Lovable sync"
+          exit 1
+      - name: Pull latest code from the Lovable-synced repo
+        run: |
+          git clone --depth 1 https://github.com/SahilRaut/sahilraut-d21e9b93.git /tmp/lovable
+          rsync -a --delete --exclude .git --exclude node_modules --exclude dist --exclude .github /tmp/lovable/ .
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Sync latest site from Lovable"
+          git push
+  deploy:
+    needs: sync
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun run build
+      - run: cp dist/index.html dist/404.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
