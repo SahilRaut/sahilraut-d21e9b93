@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import { ArrowUpRight, Download, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -209,6 +209,16 @@ export default function Home() {
                 <br />
                 one inference layer at a time
               </Link>
+              <div>
+                <a
+                  href="/cv/Sahil-Raut-CV.pdf"
+                  download
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-primary transition-colors hover:bg-primary/10"
+                >
+                  <Download className="h-3 w-3" />
+                  Download CV
+                </a>
+              </div>
             </div>
             <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[28vh] w-full max-w-[300px] md:order-none md:ml-0 md:h-[40vh] md:max-w-[30vw] md:shrink-0 opacity-90" />
           </div>
