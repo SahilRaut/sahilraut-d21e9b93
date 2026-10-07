@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import { ArrowUpRight, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -51,7 +51,7 @@ const skills: { name: string; Icon: ComponentType<{ className?: string }> }[] = 
   { name: "OpenCV", Icon: SiOpencv },
   { name: "Computer Vision", Icon: Eye },
   { name: "YOLOv8", Icon: ScanSearch },
-  { name: "Visual SLAM", Icon: Map },
+  { name: "Visual SLAM", Icon: MapIcon },
   { name: "LiDAR", Icon: Radar },
   { name: "NVIDIA / CUDA", Icon: SiNvidia },
   { name: "Manipulation", Icon: Hand },
