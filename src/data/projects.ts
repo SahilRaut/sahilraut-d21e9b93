@@ -5,7 +5,10 @@ import castorKeyResults from "@/assets/castor-key-results.jpg";
 import previewNaoAdventure from "@/assets/nao-preview.jpg";
 import naoAdventure from "@/assets/nao-adventure.jpg";
 import previewRoboticArm from "@/assets/preview-robotic-arm.jpg";
-import previewMicromouse from "@/assets/preview-micromouse.jpg";
+import previewMicromouse from "@/assets/micromouse-preview.jpg";
+import micromouseCad from "@/assets/micromouse-cad.jpg";
+import micromousePcbs from "@/assets/micromouse-pcbs.jpg";
+import micromouseRobot from "@/assets/micromouse-robot.jpg";
 import attiny85Hero from "@/assets/attiny85-hero.jpg";
 import attiny85Preview from "@/assets/attiny85-preview.jpg";
 import attiny85Components from "@/assets/attiny85-components.jpg";
@@ -155,6 +158,12 @@ export const projects: Project[] = [
       "Maze search algorithm",
     ],
     previewImage: previewMicromouse,
+    introImage: micromouseRobot,
+    introImageCaption: "The finished Micromouse — custom PCB stack, IR sensors and drive motors on a 3D-printed chassis",
+    gallery: [
+      { src: micromouseCad, caption: "CAD assembly — stacked PCB design in the chassis" },
+      { src: micromousePcbs, caption: "The custom boards: main board, ultrasonic sensor and IR emitter array" },
+    ],
   },
   {
     name: "ATtiny85 Gift Box",
