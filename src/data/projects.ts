@@ -1,5 +1,6 @@
 import trashSortingSetup from "@/assets/trash-sorting-setup.jpg";
 import castorRobotCloseup from "@/assets/castor-robot-closeup.jpg";
+import castorPreview from "@/assets/castor-preview.jpg";
 import castorKeyResults from "@/assets/castor-key-results.jpg";
 import previewNaoAdventure from "@/assets/nao-preview.jpg";
 import naoAdventure from "@/assets/nao-adventure.jpg";
@@ -69,7 +70,7 @@ export const projects: Project[] = [
       "ChatGPT-driven voice responses",
     ],
     repoUrl: "https://github.com/SahilRaut/CASTOR-UK-Build/wiki",
-    previewImage: castorRobotCloseup,
+    previewImage: castorPreview,
     gallery: [
       {
         src: castorRobotCloseup,
