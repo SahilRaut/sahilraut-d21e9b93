@@ -138,6 +138,8 @@ export const projects: Project[] = [
       "Precise movement algorithms",
     ],
     previewImage: previewRoboticArm,
+    repoUrl: "https://github.com/SahilRaut/Handling-Test-tube",
+    demoUrl: "https://www.youtube.com/watch?v=iW0zDSGd59A",
   },
   {
     name: "Micromouse",
