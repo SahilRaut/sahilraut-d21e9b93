@@ -14,6 +14,8 @@ import attiny85Demo from "@/assets/attiny85-demo.gif";
 import attiny85Preview from "@/assets/attiny85-preview.jpg";
 import attiny85Components from "@/assets/attiny85-components.jpg";
 import attiny85Circuit from "@/assets/attiny85-circuit.jpg";
+import vectorPreview from "@/assets/vector-preview.jpg";
+import vectorDesk from "@/assets/vector-desk.jpg";
 
 export type Project = {
   name: string;
@@ -33,6 +35,31 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    name: "Vector Desk Accountability",
+    slug: "vector-desk-accountability",
+    description:
+      "An Anki Vector robot as an autonomous desk-cleanliness accountability partner — YOLO perception, behaviour trees and a social robotic interface.",
+    fullDescription:
+      "A desk-cleanliness monitoring demo using the Anki Vector robot as an autonomous accountability partner. A YOLO-based vision model observes the workspace and detects clutter contributors such as cans, packaging, cables, tools and other misplaced items. A behaviour tree turns those detections into structured robot behaviour: Vector inspects the desk, evaluates whether it meets a configurable cleanliness threshold, and responds accordingly — reporting success when the desk is clear, or flagging the issue and prompting the user to clean up. A practical example of embodied AI, combining perception, decision-making and a social robotic interface to support a real-world habit.",
+    stack: ["Anki Vector", "YOLO", "Behaviour Trees", "Python", "Computer Vision"],
+    impact: "Embodied AI that turns perception into a real-world habit — a robot that holds you accountable",
+    challenges: [
+      "Filtering low-confidence detections into a reliable desk-cleanliness state",
+      "Structuring inspection, evaluation and response as a behaviour tree",
+      "Keeping perception, cleanliness rules and robot actions modular",
+    ],
+    features: [
+      "YOLO object detection for clutter categories (cans, packaging, tools, cables)",
+      "Configurable cleanliness thresholds and object-count rules",
+      "Behaviour-tree decision-making driving Vector's responses",
+      "Modular design — easy to add items, schedule inspections or log results",
+    ],
+    demoUrl: "https://youtu.be/qhjFYePOsr8",
+    previewImage: vectorPreview,
+    introImage: vectorDesk,
+    introImageCaption: "Vector on the desk — the social robot interface for the cleanliness monitoring system.",
+  },
   {
     name: "Automating Trash-Sorting",
     slug: "automating-trash-sorting",
