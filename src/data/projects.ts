@@ -14,6 +14,8 @@ import attiny85Demo from "@/assets/attiny85-demo.gif";
 import attiny85Preview from "@/assets/attiny85-preview.jpg";
 import attiny85Components from "@/assets/attiny85-components.jpg";
 import attiny85Circuit from "@/assets/attiny85-circuit.jpg";
+import vectorPreview from "@/assets/vector-preview.jpg";
+import vectorDesk from "@/assets/vector-desk.jpg";
 
 export type Project = {
   name: string;
