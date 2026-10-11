@@ -7,3 +7,5 @@
 - [x] Add a Download CV button (CV PDF from user upload)
 - [x] Drop "replication" wording from the CASTOR project everywhere (name, slug, copy, sitemap, legacy redirect)
 - [x] Push and deploy the latest changes to GitHub Pages
+- [x] Add Vector Desk Accountability project (photo + YouTube demo)
+- [ ] Move Vector Desk Accountability to the bottom of the projects list and re-deploy
