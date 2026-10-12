@@ -20,7 +20,7 @@ const experience = [
   {
     meta: "UWE-AI • Bristol, UK • 2024–2025",
     title: "Perception Engineer",
-    body: "Built LiDAR perception for the team's autonomous formula car — detection, clustering and tracking of track cones feeding the planning stack.",
+    body: "Built LiDAR perception for the team's autonomous formula car: detection, clustering and tracking of track cones feeding the planning stack.",
   },
   {
     meta: "Bristol Robotics Laboratory • Bristol, UK • 2024–2025",
@@ -84,7 +84,7 @@ export default function Home() {
       {/* Top bar */}
       <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
-          <a href="#top" aria-label="Sahil Raut — home" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
+          <a href="#top" aria-label="Sahil Raut home" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
             <span className="flex h-7 w-7 shrink-0 items-center justify-center md:h-9 md:w-9">
               <img
                 src={sahilLogo}
@@ -134,10 +134,10 @@ export default function Home() {
         <Section index="01" title="About">
           <div className="space-y-5">
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              I'm a robotics engineer working across perception, learning, planning, control and embedded hardware. I build and integrate systems that help robots understand their environment, make decisions and act reliably; from vision and data pipelines to manipulation systems.
+              I am a robotics engineer working across perception, learning, planning, control and embedded hardware. I build and integrate systems that help robots understand their environment, make decisions and act reliably; from vision and data pipelines to manipulation systems.
             </p>
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              I'm interested in embodied AI, autonomous systems and human–robot interaction. Outside work, you'll find me following Formula 1, playing football or chess, and contributing to open-source robotics projects.
+              I am interested in embodied AI, autonomous systems and human-robot interaction. Outside work, you will find me following Formula 1, playing football or chess, and contributing to open-source robotics projects.
             </p>
           </div>
         </Section>

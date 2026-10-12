@@ -39,11 +39,11 @@ export function RedGrid({ className = "" }: { className?: string }) {
       // Grid lines.
       ctx.lineWidth = 1;
       for (let x = 0; x <= w; x += cell) {
-        ctx.strokeStyle = `hsl(${primary} / ${0.09 + vign(x, 0) * 0.18})`;
+        ctx.strokeStyle = `hsl(${primary} / ${0.04 + vign(x, 0) * 0.08})`;
         ctx.beginPath(); ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, h); ctx.stroke();
       }
       for (let y = 0; y <= h; y += cell) {
-        ctx.strokeStyle = `hsl(${primary} / ${0.09 + vign(0, y) * 0.18})`;
+        ctx.strokeStyle = `hsl(${primary} / ${0.04 + vign(0, y) * 0.08})`;
         ctx.beginPath(); ctx.moveTo(0, y + 0.5); ctx.lineTo(w, y + 0.5); ctx.stroke();
       }
 
@@ -60,7 +60,7 @@ export function RedGrid({ className = "" }: { className?: string }) {
         // Brightened grid segment at the beam.
         ctx.lineWidth = 1.5;
         for (let y = 0; y <= h; y += cell) {
-          const a = 0.22 * vign(beamX, y);
+          const a = 0.1 * vign(beamX, y);
           if (a <= 0.01) continue;
           ctx.strokeStyle = `hsl(${primary} / ${a})`;
           ctx.beginPath(); ctx.moveTo(beamX - 120, y + 0.5); ctx.lineTo(beamX + 120, y + 0.5); ctx.stroke();

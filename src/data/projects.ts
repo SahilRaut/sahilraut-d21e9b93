@@ -43,7 +43,7 @@ export const projects: Project[] = [
     fullDescription:
       "Built at the SICK Solution Hackathon 2023 in Germany. We automated trash sorting by combining SICK Visionary-S 3D stereo depth cameras, a YOLOv8-based classification network, Azure Custom Image Classifier and an ABB GoFa CRB 15000 cobot to pick and categorise diverse waste types.",
     stack: ["YOLOv8", "SICK Visionary-S", "Azure Custom Vision", "ABB GoFa", "Python"],
-    impact: "Kept workers away from toxic waste — the cobot took over hazardous manual sorting",
+    impact: "Kept workers away from toxic waste by letting the cobot take over hazardous manual sorting",
     challenges: [
       "Classifying visually similar waste types reliably in real time",
       "Fusing 3D depth data with 2D classification for accurate grasp points",
@@ -58,13 +58,13 @@ export const projects: Project[] = [
     demoUrl: "https://drive.google.com/file/d/1D1oOZA_YDkooNurbry9JvS0sh6EmKS6N/view",
     previewImage: trashSortingSetup,
     introImage: trashSortingSetup,
-    introImageCaption: "The setup at the beginning — ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
+    introImageCaption: "The setup at the beginning: ABB GoFa cobot on the sorting table at the SICK Solution Hackathon 2023.",
   },
   {
     name: "CASTOR Humanoid Robot",
     slug: "castor-humanoid",
     description:
-      "Led the build of the CASTOR HRI humanoid at Bristol Robotics Lab — hardware assembly, face detection and ChatGPT-powered voice feedback.",
+      "Led the build of the CASTOR HRI humanoid at Bristol Robotics Lab: hardware assembly, face detection and ChatGPT-powered voice feedback.",
     fullDescription:
       "At Bristol Robotics Laboratory I led the build of CASTOR, a human-robot interaction humanoid. Work covered hardware assembly, software configuration, face detection with an OpenMV H7 Plus camera, facial-expression synchronisation scripts, ChatGPT API voice feedback, and migrating the system onto a Raspberry Pi 4 + Jetson Nano working together.",
     stack: ["ROS", "Python", "OpenMV H7", "Jetson Nano", "Raspberry Pi", "ChatGPT API"],
@@ -85,12 +85,12 @@ export const projects: Project[] = [
       {
         src: castorRobotCloseup,
         caption:
-          "CASTOR up close — 3D-printed head with OpenMV H7 eye cameras and servo-driven arms.",
+          "CASTOR up close: 3D-printed head with OpenMV H7 eye cameras and servo-driven arms.",
       },
       {
         src: castorKeyResults,
         caption:
-          "Key results presentation — walking through the CASTOR UK build at Bristol Robotics Laboratory.",
+          "Key results presentation: walking through the CASTOR UK build at Bristol Robotics Laboratory.",
       },
     ],
   },
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     demoUrl: "https://www.youtube.com/watch?v=zuJG3WEgxY8",
     introImage: naoAdventure,
     introImageCaption:
-      "The NAO robot running the adventure game — Choregraphe behaviour flow and Python script on screen",
+      "The NAO robot running the adventure game: Choregraphe behaviour flow and Python script on screen",
   },
   {
     name: "Robotic Arm Automation & Control",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     name: "Micromouse",
     slug: "micromouse",
     description:
-      "Maze-solving robot built end to end — CAD, Eagle PCB design, IR sensors, motor testing and a maze search algorithm.",
+      "Maze-solving robot built end to end: CAD, Eagle PCB design, IR sensors, motor testing and a maze search algorithm.",
     fullDescription:
       "Led the Micromouse project through every stage: CAD design, PCB design in Eagle, IR sensor construction, motor testing and programming the maze-search algorithm that lets the robot navigate walls and obstacles.",
     stack: ["C", "Eagle PCB", "CAD", "IR Sensors", "Embedded"],
@@ -164,9 +164,9 @@ export const projects: Project[] = [
     ],
     previewImage: previewMicromouse,
     introImage: micromouseRobot,
-    introImageCaption: "The finished Micromouse — custom PCB stack, IR sensors and drive motors on a 3D-printed chassis",
+    introImageCaption: "The finished Micromouse: custom PCB stack, IR sensors and drive motors on a 3D-printed chassis",
     gallery: [
-      { src: micromouseCad, caption: "CAD assembly — stacked PCB design in the chassis" },
+      { src: micromouseCad, caption: "CAD assembly: stacked PCB design in the chassis" },
       { src: micromousePcbs, caption: "The custom boards: main board, ultrasonic sensor and IR emitter array" },
     ],
   },
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     name: "ATtiny85 Gift Box",
     slug: "attiny85-gift-box",
     description:
-      "A compact ATtiny85-powered keychain with a 0.96-inch OLED screen — a token of appreciation for the teachers and technicians who shaped my engineering journey.",
+      "A compact ATtiny85-powered keychain with a 0.96-inch OLED screen: a token of appreciation for the teachers and technicians who shaped my engineering journey.",
     fullDescription:
       "A pocket-sized gift box built around the ATtiny85 microcontroller and a 0.96-inch OLED display, powered by a LiPo battery with a charging IC, push buttons and a keychain ring. I designed and hand-built it as a thank-you gift for the teachers and technicians who contributed to my growth as an engineer during my bachelor's degree.",
     stack: ["ATtiny85", "Arduino (C/C++)", "OLED Display", "LiPo + Charger IC", "Embedded"],
@@ -195,15 +195,15 @@ export const projects: Project[] = [
     gallery: [
       {
         src: attiny85Demo,
-        caption: "The Gift Box in action — scrolling its thank-you message on the OLED screen.",
+        caption: "The Gift Box in action: scrolling its thank-you message on the OLED screen.",
       },
       {
         src: attiny85Hero,
-        caption: "The finished ATtiny85 Gift Box — OLED screen, buttons and keychain ring in a compact enclosure.",
+        caption: "The finished ATtiny85 Gift Box: OLED screen, buttons and keychain ring in a compact enclosure.",
       },
       {
         src: attiny85Components,
-        caption: "All the components — ATtiny85, OLED screen, LiPo battery, charger IC, buttons and keychain ring.",
+        caption: "All the components: ATtiny85, OLED screen, LiPo battery, charger IC, buttons and keychain ring.",
       },
       {
         src: attiny85Circuit,
@@ -215,11 +215,11 @@ export const projects: Project[] = [
     name: "Vector Desk Accountability",
     slug: "vector-desk-accountability",
     description:
-      "An Anki Vector robot as an autonomous desk-cleanliness accountability partner — YOLO perception, behaviour trees and a social robotic interface.",
+      "An Anki Vector robot as an autonomous desk-cleanliness accountability partner: YOLO perception, behaviour trees and a social robotic interface.",
     fullDescription:
-      "A desk-cleanliness monitoring demo using the Anki Vector robot as an autonomous accountability partner. A YOLO-based vision model observes the workspace and detects clutter contributors such as cans, packaging, cables, tools and other misplaced items. A behaviour tree turns those detections into structured robot behaviour: Vector inspects the desk, evaluates whether it meets a configurable cleanliness threshold, and responds accordingly — reporting success when the desk is clear, or flagging the issue and prompting the user to clean up. A practical example of embodied AI, combining perception, decision-making and a social robotic interface to support a real-world habit.",
+      "A desk-cleanliness monitoring demo using the Anki Vector robot as an autonomous accountability partner. A YOLO-based vision model observes the workspace and detects clutter contributors such as cans, packaging, cables, tools and other misplaced items. A behaviour tree turns those detections into structured robot behaviour: Vector inspects the desk, evaluates whether it meets a configurable cleanliness threshold, and responds accordingly: reporting success when the desk is clear, or flagging the issue and prompting the user to clean up. A practical example of embodied AI, combining perception, decision-making and a social robotic interface to support a real-world habit.",
     stack: ["Anki Vector", "YOLO", "Behaviour Trees", "Python", "Computer Vision"],
-    impact: "Embodied AI that turns perception into a real-world habit — a robot that holds you accountable",
+    impact: "Embodied AI that turns perception into a real-world habit, a robot that holds you accountable",
     challenges: [
       "Filtering low-confidence detections into a reliable desk-cleanliness state",
       "Structuring inspection, evaluation and response as a behaviour tree",
@@ -229,12 +229,12 @@ export const projects: Project[] = [
       "YOLO object detection for clutter categories (cans, packaging, tools, cables)",
       "Configurable cleanliness thresholds and object-count rules",
       "Behaviour-tree decision-making driving Vector's responses",
-      "Modular design — easy to add items, schedule inspections or log results",
+      "Modular design: easy to add items, schedule inspections or log results",
     ],
     demoUrl: "https://youtu.be/qhjFYePOsr8",
     previewImage: vectorPreview,
     introImage: vectorDesk,
-    introImageCaption: "Vector on the desk — the social robot interface for the cleanliness monitoring system.",
+    introImageCaption: "Vector on the desk: the social robot interface for the cleanliness monitoring system.",
   },
 ];
 

@@ -41,7 +41,7 @@ export function BinaryField({ className = "" }: { className?: string }) {
         const vign = Math.max(0, 1 - d * 1.15);
         const md = Math.hypot(x - mx, y - my);
         const hover = md < 140 ? 1 - md / 140 : 0;
-        const a = 0.05 + vign * 0.22 + glow[i] * 0.35 + hover * 0.6;
+        const a = 0.025 + vign * 0.09 + glow[i] * 0.15 + hover * 0.45;
         ctx.fillStyle = `hsl(${primary} / ${Math.min(a, 0.95)})`;
         ctx.fillText(bits[i] ? "1" : "0", x, y);
       }
