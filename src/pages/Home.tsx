@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Download, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import { ArrowUpRight, Download, Github, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -9,6 +9,7 @@ import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryField } from "@/components/lab/BinaryField";
 import { AsciiRobotArm } from "@/components/lab/AsciiRobotArm";
+import { Footer } from "@/components/layout/Footer";
 import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const experience = [
@@ -34,7 +35,8 @@ const experience = [
   },
 ];
 
-const skills: { name: string; Icon: ComponentType<{ className?: string; style?: React.CSSProperties }>; color?: string }[] = [
+type Skill = { name: string; Icon: ComponentType<{ className?: string; style?: React.CSSProperties }>; color?: string };
+const skills: Skill[] = [
   { name: "Python", Icon: SiPython, color: "#3776AB" },
   { name: "C/C++", Icon: SiCplusplus, color: "#00599C" },
   { name: "ROS1/2", Icon: SiRos, color: "#9DB4D0" },
@@ -66,6 +68,14 @@ const skills: { name: string; Icon: ComponentType<{ className?: string; style?: 
   { name: "Leadership", Icon: Users, color: "#F97316" },
 ];
 
+const skillGroups: { label: string; names: string[] }[] = [
+  { label: "Languages & Tools", names: ["Python", "C/C++", "Git", "Linux", "Docker", "Kubernetes", "MATLAB"] },
+  { label: "Robotics & Control", names: ["ROS1/2", "MoveIt", "Gazebo", "Manipulation", "Robot Control", "Visual SLAM", "LiDAR"] },
+  { label: "AI & Perception", names: ["PyTorch", "TensorFlow", "NumPy", "Deep Learning", "OpenCV", "Computer Vision", "YOLOv8", "NVIDIA / CUDA"] },
+  { label: "Hardware & Design", names: ["Fusion360", "SolidWorks", "PCB / KiCad", "VHDL", "Arduino", "Raspberry Pi"] },
+  { label: "Team", names: ["Leadership"] },
+];
+
 function Section({ index, title, children, id }: { index: string; title: string; children: ReactNode; id?: string }) {
   return (
     <section id={id} className="grid scroll-mt-20 gap-6 border-t border-border py-12 md:grid-cols-2 md:gap-8 md:py-24">
@@ -82,7 +92,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-background text-foreground">
       <BinaryField />
       {/* Top bar */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-background/70 backdrop-blur-md">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <a href="#top" aria-label="Sahil Raut home" className="group flex items-center gap-3 transition-opacity hover:opacity-90">
             <span className="flex h-7 w-7 shrink-0 items-center justify-center md:h-9 md:w-9">
@@ -93,19 +103,16 @@ export default function Home() {
               />
             </span>
           </a>
-          <nav className="flex items-center gap-5 md:gap-8">
-            <a
-              href="/cv/Sahil-Raut-CV.pdf"
-              download
-              aria-label="Download CV"
-              className="inline-flex items-center gap-2"
-            >
-              <Download className="h-4 w-4 shrink-0 text-primary md:h-3.5 md:w-3.5" />
-              <span className="retro-text hidden text-xs md:inline md:text-sm">Download CV</span>
+          <nav className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-wider md:gap-7 md:text-xs">
+            <a href="#projects" className="hidden text-muted-foreground transition-colors hover:text-primary sm:inline">Projects</a>
+            <a href="#skills" className="hidden text-muted-foreground transition-colors hover:text-primary sm:inline">Skills</a>
+            <a href="https://github.com/SahilRaut" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary">
+              <Github className="h-4 w-4" /><span className="hidden md:inline">GitHub</span>
             </a>
-            <Link to="/contact" className="inline-block">
-              <span className="retro-text text-xs md:text-sm">Contact me</span>
-            </Link>
+            <a href="/cv/Sahil-Raut-CV.pdf" download aria-label="Download CV" className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-primary">
+              <Download className="h-4 w-4 md:h-3.5 md:w-3.5" /><span className="hidden md:inline">CV</span>
+            </a>
+            <Link to="/contact" className="rounded-full border border-primary/50 px-3 py-1.5 text-primary transition-colors hover:bg-primary/10">Contact</Link>
           </nav>
         </div>
       </header>
@@ -154,40 +161,58 @@ export default function Home() {
 
         <Section index="03" title="Projects" id="projects">
           {projects.map((p) => (
-            <Link
+            <article
               key={p.slug}
-              to={`/work/${p.slug}`}
-              className="group block overflow-hidden rounded-lg border border-border bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_45px_-8px_hsl(var(--primary)/0.45)]"
+              className="group overflow-hidden rounded-lg border border-border bg-card/70 backdrop-blur-md transition-all duration-300 hover:border-primary/60"
             >
-              {p.previewImage && (
-                <div className="aspect-video overflow-hidden border-b border-border bg-card">
-                  <img src={p.previewImage} alt={`${p.name} preview`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 motion-safe:group-hover:scale-105" />
+              <Link to={`/work/${p.slug}`} className="block">
+                {p.previewImage && (
+                  <div className="aspect-video overflow-hidden border-b border-border bg-card">
+                    <img src={p.previewImage} alt={`${p.name} preview`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 motion-safe:group-hover:scale-105" />
+                  </div>
+                )}
+                <div className="flex items-start justify-between gap-4 px-6 pt-5">
+                  <h3 className="min-w-0 text-lg font-semibold text-foreground transition-colors group-hover:text-primary">{p.name}</h3>
+                  <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
                 </div>
-              )}
-              <div className="flex items-start justify-between gap-4 px-6 pt-5">
-                <h3 className="min-w-0 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                  <BinaryGlitchText text={p.name} speed={25} hold={2} />
-                </h3>
-                <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-foreground/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                <p className="mt-3 px-6 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5 px-6">
+                  {p.stack.slice(0, 4).map((t) => (
+                    <span key={t} className="rounded border border-border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">{t}</span>
+                  ))}
+                </div>
+              </Link>
+              <div className="mt-5 flex gap-2 border-t border-border px-6 py-4">
+                {p.repoUrl && (
+                  <a href={p.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">
+                    <Github className="h-3.5 w-3.5" /> Code
+                  </a>
+                )}
+                {p.demoUrl && (
+                  <a href={p.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">
+                    <Play className="h-3.5 w-3.5" /> Demo
+                  </a>
+                )}
+                <Link to={`/work/${p.slug}`} className="ml-auto inline-flex items-center font-mono text-[11px] uppercase tracking-wider text-muted-foreground hover:text-primary">Details</Link>
               </div>
-              <p className="mt-3 px-6 pb-5 text-sm leading-relaxed text-foreground/80">{p.description}</p>
-            </Link>
+            </article>
           ))}
         </Section>
 
-        <Section index="04" title="Skills">
-          <div className="flex flex-wrap gap-2">
-            {skills.map(({ name, Icon, color }) => (
-              <div
-                key={name}
-                title={name}
-                className="group flex items-center gap-1.5 rounded-full border border-border bg-card/60 px-3 py-1.5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-primary/70 hover:shadow-[0_0_14px_hsl(var(--primary)/0.3)]"
-              >
-                <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
-                <span className="font-mono text-[11px] leading-none text-muted-foreground group-hover:text-foreground">{name}</span>
+        <Section index="04" title="Skills" id="skills">
+          {skillGroups.map((g) => (
+            <div key={g.label}>
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-primary">// {g.label}</p>
+              <div className="flex flex-wrap gap-2">
+                {skills.filter((s) => g.names.includes(s.name)).map(({ name, Icon, color }) => (
+                  <div key={name} className="flex items-center gap-2 rounded-md border border-border bg-card/70 px-3 py-1.5 transition-colors hover:border-primary/60">
+                    <Icon className="h-3.5 w-3.5 shrink-0" style={{ color }} />
+                    <span className="font-mono text-[11px] uppercase leading-none tracking-wider text-foreground/85">{name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </Section>
 
         <Section index="05" title="Education">
@@ -231,8 +256,8 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="relative z-10 pb-8 text-xs text-muted-foreground">© {new Date().getFullYear()} Sahil Raut</footer>
       </main>
+      <Footer />
     </div>
   );
 }
