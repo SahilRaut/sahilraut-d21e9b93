@@ -190,12 +190,17 @@ export default function Home() {
               <div className="mt-5 flex gap-2 border-t border-border px-6 py-4">
                 {p.repoUrl && (
                   <a href={p.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">
-                    <Github className="h-3.5 w-3.5" /> Code
+                    <Github className="h-3.5 w-3.5" style={{ color: "#F0F6FC" }} /> Code
                   </a>
                 )}
                 {p.demoUrl && (
                   <a href={p.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">
-                    <Play className="h-3.5 w-3.5" /> Demo
+                    {/youtu\.?be/.test(p.demoUrl) ? (
+                      <Youtube className="h-3.5 w-3.5" style={{ color: "#FF3B30" }} />
+                    ) : (
+                      <Play className="h-3.5 w-3.5" style={{ color: "#FF3B30" }} />
+                    )}
+                    Demo
                   </a>
                 )}
                 <Link to={`/work/${p.slug}`} className="ml-auto inline-flex items-center font-mono text-[11px] uppercase tracking-wider text-muted-foreground hover:text-primary">Details</Link>
