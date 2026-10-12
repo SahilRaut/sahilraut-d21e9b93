@@ -2,7 +2,7 @@ import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Download, Github, Linkedin, Youtube, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users, Grab, Route, RadioTower, Cable, Activity, Blocks, Wrench, Network, ClipboardList, MessageSquare, GraduationCap, Handshake } from "lucide-react";
 import {
-  SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
+  SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy, SiEspressif,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
 } from "react-icons/si";
 import { projects } from "@/data/projects";
@@ -66,8 +66,7 @@ const skills: Skill[] = [
   { name: "YOLOv8", Icon: ScanSearch, color: "#8A9BFF" },
   { name: "NVIDIA CUDA", Icon: SiNvidia, color: "#76B900" },
   // Robotics & Autonomy
-  { name: "ROS 1", Icon: SiRos, color: "#A0B8D8" },
-  { name: "ROS 2", Icon: SiRos, color: "#7C9CF5" },
+  { name: "ROS 1 / ROS 2", Icon: SiRos, color: "#7C9CF5" },
   { name: "Robot Manipulation", Icon: Hand, color: "#FBBF24" },
   { name: "Grasp Generation", Icon: Grab, color: "#F97316" },
   { name: "Robot Control", Icon: Gauge, color: "#22D3EE" },
@@ -86,6 +85,8 @@ const skills: Skill[] = [
   { name: "3D CAD", Icon: Blocks, color: "#E879F9" },
   { name: "Prototyping", Icon: Wrench, color: "#94A3B8" },
   { name: "VHDL", Icon: Cpu, color: "#A78BFA" },
+  { name: "Altera FPGA", Icon: Cpu, color: "#0068B5" },
+  { name: "ESP32", Icon: SiEspressif, color: "#E7352C" },
   // Tools
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "GitHub", Icon: Github, color: "#F0F6FC" },
@@ -113,11 +114,11 @@ const skillGroups: { label: string; names: string[] }[] = [
   },
   {
     label: "Robotics & Autonomy",
-    names: ["ROS 1", "ROS 2", "Robot Manipulation", "Grasp Generation", "Robot Control", "Motion Planning", "Visual SLAM", "LiDAR", "Sensor Integration", "MoveIt", "Gazebo"],
+    names: ["ROS 1 / ROS 2", "Robot Manipulation", "Grasp Generation", "Robot Control", "Motion Planning", "Visual SLAM", "LiDAR", "Sensor Integration", "MoveIt", "Gazebo"],
   },
   {
     label: "Hardware & Embedded Systems",
-    names: ["NVIDIA Jetson", "Raspberry Pi", "Arduino", "PCB Design", "Electronics Debugging", "3D CAD", "Prototyping", "VHDL"],
+    names: ["NVIDIA Jetson", "Raspberry Pi", "Arduino", "PCB Design", "Electronics Debugging", "3D CAD", "Prototyping", "VHDL", "Altera FPGA", "ESP32"],
   },
   {
     label: "Tools",
