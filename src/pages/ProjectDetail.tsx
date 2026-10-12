@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CodeDivider } from "@/components/ui/CodeDivider";
 import { TechTag } from "@/components/ui/TechTag";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, Github, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -156,7 +156,7 @@ export default function ProjectDetail() {
               disabled={!project.repoUrl}
               onClick={() => project.repoUrl && window.open(project.repoUrl, "_blank", "noopener,noreferrer")}
             >
-              <Github className="mr-2 h-4 w-4" />
+              <Github className="mr-2 h-4 w-4" style={{ color: "#F0F6FC" }} />
               View Code
             </Button>
             {project.demoUrl && (
@@ -165,7 +165,7 @@ export default function ProjectDetail() {
                 className="font-mono"
                 onClick={() => project.demoUrl && window.open(project.demoUrl, "_blank", "noopener,noreferrer")}
               >
-                <ExternalLink className="mr-2 h-4 w-4" />
+                <Youtube className="mr-2 h-4 w-4" style={{ color: "#FF3B30" }} />
                 Live Demo
               </Button>
             )}
