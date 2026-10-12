@@ -247,14 +247,6 @@ export default function Home() {
                 one inference layer at a time
               </Link>
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="/cv/Sahil-Raut-CV.pdf"
-                  download
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-primary transition-colors hover:bg-primary/10"
-                >
-                  <Download className="h-3 w-3" />
-                  Download CV
-                </a>
                 {socials.map((s) => (
                   <a
                     key={s.label}
