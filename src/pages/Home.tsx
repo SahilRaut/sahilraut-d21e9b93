@@ -10,6 +10,11 @@ import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryField } from "@/components/lab/BinaryField";
 import { AsciiRobotArm } from "@/components/lab/AsciiRobotArm";
 import sahilLogo from "@/assets/sahil-logo-original-white.png";
+import neuraLogo from "@/assets/logo-neura.svg";
+import sickLogo from "@/assets/logo-sick.svg";
+import uweLogo from "@/assets/logo-uwe.svg";
+import brlLogo from "@/assets/logo-brl.png";
+import islingtonLogo from "@/assets/logo-islington-robotica.png";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/SahilRaut", Icon: Github, color: "#F0F6FC" },
@@ -17,23 +22,32 @@ const socials = [
   { label: "YouTube", href: "https://www.youtube.com/@HiSahilTech", Icon: Youtube, color: "#FF3B30" },
 ];
 
-const experience = [
+type CompanyLogo = { src: string; alt: string; wide?: boolean };
+
+const experience: { logos: CompanyLogo[]; meta: string; title: string; body: string }[] = [
   {
+    logos: [{ src: neuraLogo, alt: "NEURA Robotics logo", wide: true }],
     meta: "NEURA Robotics • Riederich, Germany • 2025–Present",
     title: "AI Robotics Software Developer",
     body: "Training and integrating deep learning models, including grasp-generation engines, into production robots. Connecting robots to the Neuraverse cloud platform and deploying custom applications for real customers.",
   },
   {
+    logos: [{ src: uweLogo, alt: "UWE Bristol logo" }],
     meta: "UWE-AI • Bristol, UK • 2024–2025",
     title: "Perception Engineer",
     body: "Built LiDAR perception for the team's autonomous formula car: detection, clustering and tracking of track cones feeding the planning stack.",
   },
   {
+    logos: [{ src: brlLogo, alt: "Bristol Robotics Laboratory logo", wide: true }],
     meta: "Bristol Robotics Laboratory • Bristol, UK • 2024–2025",
     title: "Robotics Engineer Intern",
     body: "Led the build of the CASTOR human-robot interaction humanoid: hardware assembly, face detection and ChatGPT-powered voice feedback.",
   },
   {
+    logos: [
+      { src: islingtonLogo, alt: "Islington Robotica logo" },
+      { src: sickLogo, alt: "SICK logo" },
+    ],
     meta: "Islington Robotica & SICK • Internships",
     title: "Robotics Intern",
     body: "Hands-on work across robot automation, sensors and industrial vision, shipping prototypes alongside engineering teams.",
@@ -190,10 +204,27 @@ export default function Home() {
 
         <Section index="02" title="Experience">
           {experience.map((e) => (
-            <div key={e.title + e.meta} className="group">
-              <p className="text-xs text-muted-foreground">{e.meta}</p>
-              <h3 className="mt-2 text-lg font-semibold transition-colors group-hover:text-primary md:text-xl">{e.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.body}</p>
+            <div key={e.title + e.meta} className="group flex gap-4">
+              <div className="flex h-9 shrink-0 items-center gap-2.5">
+                {e.logos.map((l) => (
+                  <img
+                    key={l.alt}
+                    src={l.src}
+                    alt={l.alt}
+                    loading="lazy"
+                    className={
+                      l.wide
+                        ? "h-5 w-auto max-w-[90px] object-contain opacity-90 transition-opacity group-hover:opacity-100"
+                        : "h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
+                    }
+                  />
+                ))}
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs text-muted-foreground">{e.meta}</p>
+                <h3 className="mt-2 text-lg font-semibold transition-colors group-hover:text-primary md:text-xl">{e.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.body}</p>
+              </div>
             </div>
           ))}
         </Section>
