@@ -19,7 +19,7 @@ export default function Contact() {
     const message = String(data.get("message") || "");
 
     const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const body = encodeURIComponent(`${message}\n\nFrom ${name} (${email})`);
 
     window.location.href = `mailto:hisahiltech@gmail.com?subject=${subject}&body=${body}`;
 
@@ -42,7 +42,7 @@ export default function Contact() {
             </h1>
             <p className="text-muted-foreground leading-relaxed">
               Have a project in mind or want to discuss opportunities? 
-              I'm always open to interesting conversations and collaborations.
+              I am always open to interesting conversations and collaborations.
             </p>
           </div>
 

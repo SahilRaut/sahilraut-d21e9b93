@@ -19,7 +19,7 @@ export default function ProjectDetail() {
           <div className="container">
             <div className="text-center">
               <h1 className="retro-text font-display text-5xl uppercase tracking-tighter mb-6 pr-2">Project Not Found</h1>
-              <p className="text-muted-foreground mb-8">The project you're looking for doesn't exist.</p>
+              <p className="text-muted-foreground mb-8">The project you are looking for does not exist.</p>
               <Button asChild>
                 <Link to="/#projects">
                   <ArrowLeft className="mr-2 h-4 w-4" />
@@ -60,7 +60,7 @@ export default function ProjectDetail() {
               <figure className="mb-6 overflow-hidden rounded-lg border border-border bg-card flex flex-col">
                 <img
                   src={project.introImage}
-                  alt={`${project.name} — setup at the beginning`}
+                  alt={`${project.name}: setup at the beginning`}
                   className={cn(
                     "w-full h-56 sm:h-64 object-contain bg-card",
                     !/\.gif($|\?)/.test(project.introImage) && "object-cover h-auto"
@@ -85,7 +85,7 @@ export default function ProjectDetail() {
                   >
                     <img
                       src={photo.src}
-                      alt={photo.caption || `${project.name} — photo ${i + 2}`}
+                      alt={photo.caption || `${project.name}: photo ${i + 2}`}
                       className="w-full h-56 sm:h-64 object-contain bg-card"
                       loading="lazy"
                     />

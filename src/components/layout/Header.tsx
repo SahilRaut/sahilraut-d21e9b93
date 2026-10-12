@@ -13,6 +13,8 @@ import sahilLogo from "@/assets/sahil-logo-original-white.png";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/#projects", label: "Projects" },
+  { href: "https://github.com/SahilRaut", label: "GitHub" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -44,7 +46,7 @@ export function Header() {
         {/* Left: Logo */}
         <Link
           to="/"
-          aria-label="Sahil Raut — home"
+          aria-label="Sahil Raut home"
           className="group flex items-center gap-3 transition-opacity hover:opacity-90"
         >
           <span className="flex h-7 w-7 items-center justify-center md:h-9 md:w-9">
