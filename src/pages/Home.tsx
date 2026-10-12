@@ -214,7 +214,7 @@ export default function Home() {
                     loading="lazy"
                     className={
                       l.wide
-                        ? "h-6 w-auto max-w-[110px] object-contain"
+                        ? "h-7 w-auto max-w-[120px] object-contain"
                         : "h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
                     }
                   />
