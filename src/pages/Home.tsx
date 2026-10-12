@@ -66,8 +66,7 @@ const skills: Skill[] = [
   { name: "YOLOv8", Icon: ScanSearch, color: "#8A9BFF" },
   { name: "NVIDIA CUDA", Icon: SiNvidia, color: "#76B900" },
   // Robotics & Autonomy
-  { name: "ROS 1", Icon: SiRos, color: "#A0B8D8" },
-  { name: "ROS 2", Icon: SiRos, color: "#7C9CF5" },
+  { name: "ROS 1 / ROS 2", Icon: SiRos, color: "#7C9CF5" },
   { name: "Robot Manipulation", Icon: Hand, color: "#FBBF24" },
   { name: "Grasp Generation", Icon: Grab, color: "#F97316" },
   { name: "Robot Control", Icon: Gauge, color: "#22D3EE" },
@@ -86,6 +85,8 @@ const skills: Skill[] = [
   { name: "3D CAD", Icon: Blocks, color: "#E879F9" },
   { name: "Prototyping", Icon: Wrench, color: "#94A3B8" },
   { name: "VHDL", Icon: Cpu, color: "#A78BFA" },
+  { name: "Altera FPGA", Icon: Cpu, color: "#0068B5" },
+  { name: "ESP32", Icon: SiEspressif, color: "#E7352C" },
   // Tools
   { name: "Git", Icon: SiGit, color: "#F05032" },
   { name: "GitHub", Icon: Github, color: "#F0F6FC" },
