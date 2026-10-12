@@ -9,3 +9,5 @@
 - [x] Push and deploy the latest changes to GitHub Pages
 - [x] Add Vector Desk Accountability project (photo + YouTube demo)
 - [x] Move Vector Desk Accountability to the bottom of the projects list and re-deploy
+
+- [x] Professional polish: dimmer background, no em dashes/contractions, Code/Demo buttons on cards, grouped skills, new header and footer
