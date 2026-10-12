@@ -2,7 +2,7 @@ import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Download, Github, Linkedin, Youtube, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users, Grab, Route, RadioTower, Cable, Activity, Blocks, Wrench, Network, ClipboardList, MessageSquare, GraduationCap, Handshake } from "lucide-react";
 import {
-  SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
+  SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy, SiEspressif,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
 } from "react-icons/si";
 import { projects } from "@/data/projects";
