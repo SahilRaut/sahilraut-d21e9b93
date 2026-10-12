@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Download, Github, Linkedin, Youtube, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users, Grab, Route, RadioTower, Cable, Activity, Blocks, Wrench, Network, ClipboardList, MessageSquare, GraduationCap, Handshake } from "lucide-react";
+import { ArrowUpRight, Download, Github, Linkedin, Youtube, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users, Grab, Route, RadioTower, Cable, Activity, Blocks, Wrench, Network, ClipboardList, MessageSquare, GraduationCap, Handshake } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -229,11 +229,7 @@ export default function Home() {
                 )}
                 {p.demoUrl && (
                   <a href={p.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary">
-                    {/youtu\.?be/.test(p.demoUrl) ? (
-                      <Youtube className="h-3.5 w-3.5" style={{ color: "#FF3B30" }} />
-                    ) : (
-                      <Play className="h-3.5 w-3.5" style={{ color: "#FF3B30" }} />
-                    )}
+                    <Youtube className="h-3.5 w-3.5" style={{ color: "#FF3B30" }} />
                     Demo
                   </a>
                 )}
