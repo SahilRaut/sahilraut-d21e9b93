@@ -30,7 +30,7 @@ const experience = [
   },
   {
     meta: "Bristol Robotics Laboratory • Bristol, UK • 2024–2025",
-    title: "Robotics Engineer Intern",
+    title: "Robotics Engineer",
     body: "Led the build of the CASTOR human-robot interaction humanoid: hardware assembly, face detection and ChatGPT-powered voice feedback.",
   },
   {
