@@ -13,3 +13,4 @@
 - [x] Professional polish: dimmer background, no em dashes/contractions, Code/Demo buttons on cards, grouped skills, new header and footer
 
 - [x] Remove homepage footer block; Download CV + GitHub/LinkedIn/YouTube icons under the closing CTA; slim one-line footer on inner pages
+- [x] Revert company logos from the Experience section (plain text restored, unused logo files deleted); Altera FPGA, ESP32 and combined ROS 1 / ROS 2 skills kept
