@@ -11,3 +11,5 @@
 - [x] Move Vector Desk Accountability to the bottom of the projects list and re-deploy
 
 - [x] Professional polish: dimmer background, no em dashes/contractions, Code/Demo buttons on cards, grouped skills, new header and footer
+
+- [x] Remove homepage footer block; Download CV + GitHub/LinkedIn/YouTube icons under the closing CTA; slim one-line footer on inner pages

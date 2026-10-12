@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Download, Github, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import { ArrowUpRight, Download, Github, Linkedin, Youtube, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -9,8 +9,13 @@ import { projects } from "@/data/projects";
 import { BinaryGlitchText } from "@/components/ui/BinaryGlitchText";
 import { BinaryField } from "@/components/lab/BinaryField";
 import { AsciiRobotArm } from "@/components/lab/AsciiRobotArm";
-import { Footer } from "@/components/layout/Footer";
 import sahilLogo from "@/assets/sahil-logo-original-white.png";
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/SahilRaut", Icon: Github, color: "#F0F6FC" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sahil-raut-5478b5218/", Icon: Linkedin, color: "#70B5F9" },
+  { label: "YouTube", href: "https://youtu.be/qhjFYePOsr8", Icon: Youtube, color: "#FF3B30" },
+];
 
 const experience = [
   {
@@ -241,7 +246,7 @@ export default function Home() {
                 <br />
                 one inference layer at a time
               </Link>
-              <div>
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="/cv/Sahil-Raut-CV.pdf"
                   download
@@ -250,6 +255,19 @@ export default function Home() {
                   <Download className="h-3 w-3" />
                   Download CV
                 </a>
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className="mt-6 inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/60 transition-colors hover:border-primary/60"
+                  >
+                    <s.Icon className="h-4 w-4" style={{ color: s.color }} />
+                  </a>
+                ))}
               </div>
             </div>
             <AsciiRobotArm className="pointer-events-none order-last ml-auto h-[28vh] w-full max-w-[300px] md:order-none md:ml-0 md:h-[40vh] md:max-w-[30vw] md:shrink-0 opacity-90" />
@@ -257,7 +275,6 @@ export default function Home() {
         </section>
 
       </main>
-      <Footer />
     </div>
   );
 }
