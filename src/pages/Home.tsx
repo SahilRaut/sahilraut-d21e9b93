@@ -114,11 +114,11 @@ const skillGroups: { label: string; names: string[] }[] = [
   },
   {
     label: "Robotics & Autonomy",
-    names: ["ROS 1", "ROS 2", "Robot Manipulation", "Grasp Generation", "Robot Control", "Motion Planning", "Visual SLAM", "LiDAR", "Sensor Integration", "MoveIt", "Gazebo"],
+    names: ["ROS 1 / ROS 2", "Robot Manipulation", "Grasp Generation", "Robot Control", "Motion Planning", "Visual SLAM", "LiDAR", "Sensor Integration", "MoveIt", "Gazebo"],
   },
   {
     label: "Hardware & Embedded Systems",
-    names: ["NVIDIA Jetson", "Raspberry Pi", "Arduino", "PCB Design", "Electronics Debugging", "3D CAD", "Prototyping", "VHDL"],
+    names: ["NVIDIA Jetson", "Raspberry Pi", "Arduino", "PCB Design", "Electronics Debugging", "3D CAD", "Prototyping", "VHDL", "Altera FPGA", "ESP32"],
   },
   {
     label: "Tools",
