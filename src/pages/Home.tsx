@@ -34,9 +34,14 @@ const experience = [
     body: "Led the build of the CASTOR human-robot interaction humanoid: hardware assembly, face detection and ChatGPT-powered voice feedback.",
   },
   {
-    meta: "Islington Robotica & SICK • Internships",
-    title: "Robotics Intern",
-    body: "Hands-on work across robot automation, sensors and industrial vision, shipping prototypes alongside engineering teams.",
+    meta: "Islington Robotica • London, UK • May 2023 – Jul 2023",
+    title: "Robotics Engineer Intern",
+    body: "Modified ROS 1 packages for the El Chapo V2 mobile robot, refined 3D CAD mechanical designs, and assembled and debugged hardware alongside the engineering team.",
+  },
+  {
+    meta: "SICK Sensor Intelligence • Mumbai, India • Aug 2021 – Sep 2021",
+    title: "Robotics Engineering Intern",
+    body: "Studied industrial LiDAR, RGB and infrared sensor operating principles, supported field sensor deployments for Industry 4.0 applications, and built an anti-collision TurtleBot.",
   },
 ];
 
