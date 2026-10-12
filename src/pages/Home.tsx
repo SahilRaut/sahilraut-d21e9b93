@@ -1,6 +1,6 @@
 import { ReactNode, ComponentType } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Download, Github, Linkedin, Youtube, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users } from "lucide-react";
+import { ArrowUpRight, Download, Github, Linkedin, Youtube, Play, Move3d, Box, Sigma, Brain, Eye, ScanSearch, Map as MapIcon, Radar, Hand, Gauge, Cpu, Users, Grab, Route, RadioTower, Cable, Activity, Blocks, Wrench, Network, ClipboardList, MessageSquare, GraduationCap, Handshake } from "lucide-react";
 import {
   SiPython, SiCplusplus, SiRos, SiKubernetes, SiDocker, SiLinux, SiPytorch, SiTensorflow, SiNumpy,
   SiOpencv, SiNvidia, SiAutodesk, SiDassaultsystemes, SiKicad, SiArduino, SiRaspberrypi, SiGit,
@@ -42,43 +42,77 @@ const experience = [
 
 type Skill = { name: string; Icon: ComponentType<{ className?: string; style?: React.CSSProperties }>; color?: string };
 const skills: Skill[] = [
-  { name: "Python", Icon: SiPython, color: "#3776AB" },
-  { name: "C/C++", Icon: SiCplusplus, color: "#00599C" },
-  { name: "ROS1/2", Icon: SiRos, color: "#9DB4D0" },
-  { name: "MoveIt", Icon: Move3d, color: "#E8600A" },
-  { name: "Gazebo", Icon: Box, color: "#F58113" },
-  { name: "Kubernetes", Icon: SiKubernetes, color: "#326CE5" },
-  { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-  { name: "Linux", Icon: SiLinux, color: "#FCC624" },
-  { name: "MATLAB", Icon: Sigma, color: "#E16737" },
+  // AI & Perception
   { name: "PyTorch", Icon: SiPytorch, color: "#EE4C2C" },
   { name: "TensorFlow", Icon: SiTensorflow, color: "#FF6F00" },
   { name: "NumPy", Icon: SiNumpy, color: "#4DABCF" },
-  { name: "Deep Learning", Icon: Brain, color: "#B45AF2" },
   { name: "OpenCV", Icon: SiOpencv, color: "#5C3EE8" },
   { name: "Computer Vision", Icon: Eye, color: "#38BDF8" },
+  { name: "Deep Learning", Icon: Brain, color: "#B45AF2" },
   { name: "YOLOv8", Icon: ScanSearch, color: "#8A9BFF" },
+  { name: "NVIDIA CUDA", Icon: SiNvidia, color: "#76B900" },
+  // Robotics & Autonomy
+  { name: "ROS 1", Icon: SiRos, color: "#A0B8D8" },
+  { name: "ROS 2", Icon: SiRos, color: "#7C9CF5" },
+  { name: "Robot Manipulation", Icon: Hand, color: "#FBBF24" },
+  { name: "Grasp Generation", Icon: Grab, color: "#F97316" },
+  { name: "Robot Control", Icon: Gauge, color: "#22D3EE" },
+  { name: "Motion Planning", Icon: Route, color: "#60A5FA" },
   { name: "Visual SLAM", Icon: MapIcon, color: "#34D399" },
   { name: "LiDAR", Icon: Radar, color: "#F43F5E" },
-  { name: "NVIDIA / CUDA", Icon: SiNvidia, color: "#76B900" },
-  { name: "Manipulation", Icon: Hand, color: "#FBBF24" },
-  { name: "Robot Control", Icon: Gauge, color: "#22D3EE" },
-  { name: "Fusion360", Icon: SiAutodesk, color: "#0696D7" },
-  { name: "SolidWorks", Icon: SiDassaultsystemes, color: "#E11D48" },
-  { name: "PCB / KiCad", Icon: SiKicad, color: "#314CB0" },
-  { name: "VHDL", Icon: Cpu, color: "#A78BFA" },
-  { name: "Arduino", Icon: SiArduino, color: "#00878F" },
+  { name: "Sensor Integration", Icon: RadioTower, color: "#2DD4BF" },
+  { name: "MoveIt", Icon: Move3d, color: "#E8600A" },
+  { name: "Gazebo", Icon: Box, color: "#F58113" },
+  // Hardware & Embedded Systems
+  { name: "NVIDIA Jetson", Icon: SiNvidia, color: "#76B900" },
   { name: "Raspberry Pi", Icon: SiRaspberrypi, color: "#A22846" },
+  { name: "Arduino", Icon: SiArduino, color: "#00878F" },
+  { name: "PCB Design", Icon: SiKicad, color: "#314CB0" },
+  { name: "Electronics Debugging", Icon: Activity, color: "#FACC15" },
+  { name: "3D CAD", Icon: Blocks, color: "#E879F9" },
+  { name: "Prototyping", Icon: Wrench, color: "#94A3B8" },
+  { name: "VHDL", Icon: Cpu, color: "#A78BFA" },
+  // Tools
   { name: "Git", Icon: SiGit, color: "#F05032" },
-  { name: "Leadership", Icon: Users, color: "#F97316" },
+  { name: "GitHub", Icon: Github, color: "#F0F6FC" },
+  { name: "MATLAB", Icon: Sigma, color: "#E16737" },
+  { name: "Fusion 360", Icon: SiAutodesk, color: "#0696D7" },
+  { name: "SolidWorks", Icon: SiDassaultsystemes, color: "#E11D48" },
+  { name: "Kubernetes", Icon: SiKubernetes, color: "#326CE5" },
+  { name: "Docker", Icon: SiDocker, color: "#2496ED" },
+  { name: "Linux", Icon: SiLinux, color: "#FCC624" },
+  { name: "Python", Icon: SiPython, color: "#3776AB" },
+  { name: "C/C++", Icon: SiCplusplus, color: "#00599C" },
+  // Team
+  { name: "Technical Leadership", Icon: Users, color: "#F97316" },
+  { name: "Cross-Functional Collaboration", Icon: Network, color: "#22D3EE" },
+  { name: "Project Coordination", Icon: ClipboardList, color: "#34D399" },
+  { name: "Communication", Icon: MessageSquare, color: "#60A5FA" },
+  { name: "Mentoring", Icon: GraduationCap, color: "#FBBF24" },
+  { name: "Stakeholder Engagement", Icon: Handshake, color: "#F472B6" },
 ];
 
 const skillGroups: { label: string; names: string[] }[] = [
-  { label: "Languages & Tools", names: ["Python", "C/C++", "Git", "Linux", "Docker", "Kubernetes", "MATLAB"] },
-  { label: "Robotics & Control", names: ["ROS1/2", "MoveIt", "Gazebo", "Manipulation", "Robot Control", "Visual SLAM", "LiDAR"] },
-  { label: "AI & Perception", names: ["PyTorch", "TensorFlow", "NumPy", "Deep Learning", "OpenCV", "Computer Vision", "YOLOv8", "NVIDIA / CUDA"] },
-  { label: "Hardware & Design", names: ["Fusion360", "SolidWorks", "PCB / KiCad", "VHDL", "Arduino", "Raspberry Pi"] },
-  { label: "Team", names: ["Leadership"] },
+  {
+    label: "AI & Perception",
+    names: ["PyTorch", "TensorFlow", "NumPy", "OpenCV", "Computer Vision", "Deep Learning", "YOLOv8", "NVIDIA CUDA"],
+  },
+  {
+    label: "Robotics & Autonomy",
+    names: ["ROS 1", "ROS 2", "Robot Manipulation", "Grasp Generation", "Robot Control", "Motion Planning", "Visual SLAM", "LiDAR", "Sensor Integration", "MoveIt", "Gazebo"],
+  },
+  {
+    label: "Hardware & Embedded Systems",
+    names: ["NVIDIA Jetson", "Raspberry Pi", "Arduino", "PCB Design", "Electronics Debugging", "3D CAD", "Prototyping", "VHDL"],
+  },
+  {
+    label: "Tools",
+    names: ["Git", "GitHub", "MATLAB", "Fusion 360", "SolidWorks", "Kubernetes", "Docker", "Linux", "Python", "C/C++"],
+  },
+  {
+    label: "Team",
+    names: ["Technical Leadership", "Cross-Functional Collaboration", "Project Coordination", "Communication", "Mentoring", "Stakeholder Engagement"],
+  },
 ];
 
 function Section({ index, title, children, id }: { index: string; title: string; children: ReactNode; id?: string }) {
