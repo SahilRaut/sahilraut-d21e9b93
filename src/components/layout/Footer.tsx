@@ -3,7 +3,7 @@ import { Github, Linkedin, Youtube, Download } from "lucide-react";
 const socials = [
   { label: "GitHub", href: "https://github.com/SahilRaut", Icon: Github, color: "#F0F6FC" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sahil-raut-5478b5218/", Icon: Linkedin, color: "#70B5F9" },
-  { label: "YouTube", href: "https://youtu.be/qhjFYePOsr8", Icon: Youtube, color: "#FF3B30" },
+  { label: "YouTube", href: "https://www.youtube.com/@HiSahilTech", Icon: Youtube, color: "#FF3B30" },
 ];
 
 export function Footer() {
