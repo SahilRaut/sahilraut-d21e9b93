@@ -14,3 +14,5 @@
 
 - [x] Remove homepage footer block; Download CV + GitHub/LinkedIn/YouTube icons under the closing CTA; slim one-line footer on inner pages
 - [x] Revert company logos from the Experience section (plain text restored, unused logo files deleted); Altera FPGA, ESP32 and combined ROS 1 / ROS 2 skills kept
+- [x] Split Islington Robotica and SICK Sensor Intelligence into separate Experience entries
+- [x] Bristol Robotics Laboratory role title: Robotics Engineer (not Intern); pushed and deployed live
