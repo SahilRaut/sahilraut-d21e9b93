@@ -13,7 +13,7 @@
   :root {
     /* Dark theme as default - deep black/graphite */
     --background: 240 6% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 90%;
 
     /* Card backgrounds - slightly lighter graphite */
     --card: 240 5% 7%;
@@ -32,7 +32,7 @@
 
     /* Muted - Subtle gray */
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 74%;
+    --muted-foreground: 0 0% 68%;
 
     /* Accent - Same as primary for consistency */
     --accent: 354 88% 55%;
@@ -62,7 +62,7 @@
   .dark {
     /* Same as root - dark theme is the default */
     --background: 240 6% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 90%;
     --card: 240 5% 7%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 7%;
@@ -72,7 +72,7 @@
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 74%;
+    --muted-foreground: 0 0% 68%;
     --accent: 354 88% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
